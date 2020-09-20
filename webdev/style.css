@@ -1,3 +1,130 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
+
+body {
+    min-width: 1600px;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu li {
+    margin-right: 85px;
+    margin-right: 85px;
+}
+
+.menu a {
+    color: #ffffff;
+}
+
+.logo {
+    text-decoration: none;
+    position: relative;
+    width: 44px;
+    height: 45px;
+}
+
+.life {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 800px;
+    align-items: center;
+    background: url(assets/your_life_bg.png) center center/cover no-repeat;
+}
+
+.life_title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 4.5px;
+}
+
+.life_subtitle {
+    width: 504px;
+    height: 50px;
+    font-style: bold;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 184px;
+    height: 46px;
+    left: 707px;
+    top: 406px;
+    background: #00AFDB;
+    margin-bottom: 183px;
+}
+
+.btn :hover {
+background: #009CC2;
+cursor: pointer;
+}
+
+.social {
+    display: flex;
+    width: 170px;
+    height: 20px;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
