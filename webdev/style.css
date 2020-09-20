@@ -55,6 +55,10 @@ header {
     color: #ffffff;
 }
 
+.menu a:hover {
+    opacity: 1;
+    text-decoration: underline; }
+
 .logo {
     text-decoration: none;
     position: relative;
@@ -111,12 +115,16 @@ header {
     left: 707px;
     top: 406px;
     background: #00AFDB;
+    border: none;
     margin-bottom: 183px;
-}
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-style: none;
+    padding: 15px 45px; }
 
-.btn :hover {
-background: #009CC2;
-cursor: pointer;
+.btn:hover {
+    background: #009CC2;
 }
 
 .social {
@@ -127,4 +135,34 @@ cursor: pointer;
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.rapp_content {
+    padding: 120px 269px 140px 269px;
+    margin: 0 109px 0 109px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rapp_text {
+    width: 405px;
+}
+
+.rapp_title {
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #373737;
+    max-width: 368px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.rapp_descr {
+    font-size: 14px;
+    color: #4E4E4E;
+    line-height: 1.4;
+    margin-bottom: 34px;
+    margin-top: 22px;
 }
