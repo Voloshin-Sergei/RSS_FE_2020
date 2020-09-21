@@ -1,13 +1,10 @@
-* {
-    font-family: 'Roboto', sans-serif;
-}
-
 body {
-    min-width: 1600px;
+    width: 1600px;
     margin: 0;
-    width: 100%;
     padding: 0;
     font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
 }
 
 a {
@@ -28,16 +25,14 @@ h1 {
 }
 
 header {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    height: 744px;
+    background: url(assets/your_life_bg.png) center top/cover no-repeat;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
+    margin-top: -1px;
 }
 
 .menu {
@@ -45,11 +40,12 @@ header {
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    margin-top: 27px;
 }
 
 .menu li {
     margin-right: 85px;
-    margin-right: 85px;
+    margin-right: 79px;
 }
 
 .menu a {
@@ -65,6 +61,7 @@ header {
     position: relative;
     width: 44px;
     height: 45px;
+    margin-left: 32px;
 }
 
 .menu img {
@@ -79,9 +76,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 800px;
     align-items: center;
-    background: url(assets/your_life_bg.png) center center/cover no-repeat;
+    
 }
 
 .life_title {
@@ -95,6 +91,7 @@ header {
     text-transform: uppercase;
     color: white;
     letter-spacing: 4.5px;
+    margin-top: 140px;
 }
 
 .life_subtitle {
@@ -107,6 +104,7 @@ header {
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 30px;
+    margin-top: -33px;
 }
 
 .btn {
@@ -154,8 +152,12 @@ header {
 	opacity: 0.5;
 }
 
+.rapp {
+    height: 843px;
+}
+
 .rapp_content {
-    padding: 120px 269px 140px 269px;
+    padding: 120px 160px 140px 161px;
     margin: 0 109px 0 109px;
     display: flex;
     justify-content: space-between;
@@ -164,6 +166,7 @@ header {
 
 .rapp_text {
     width: 405px;
+    padding-top: 178px;
 }
 
 .rapp_title {
@@ -184,10 +187,15 @@ header {
     margin-top: 22px;
 }
 
+.rapp_img {
+    padding-left: 140px;
+    padding-bottom: 10px;
+}
+
 .community {
 	background: #F5F6F7;
 	display: flex;
-	padding-bottom: 73px;
+	height: 504px;
 
 }
 
@@ -260,7 +268,8 @@ header {
 }
 
 .arrow_left {
-    margin-right: 14px;
+    margin-right: 18px;
+    margin-left: -6px;
     opacity: 1;
 }
 
@@ -285,8 +294,12 @@ header {
 	opacity: 0.5;
 }
 
+.implement {
+    height: 842px;
+}
+
 .implement_content {
-    padding: 120px 269px 140px 269px;
+    padding: 120px 269px 140px 158px;
     margin: 0 109px 0 109px;
     display: flex;
     justify-content: space-between;
@@ -322,7 +335,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 525px;
+    height: 525px;
 }
 
     .sing_title {
@@ -378,17 +391,19 @@ header {
     justify-content: center;
     align-items: center;
     background: #F5F6F7;
-    min-height: 463px;
+    min-height: 464px;
 }
 
 .download_content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -60px;
 }
 
 .download_title {
-    margin-top: 0;
+    margin-top: -3px;
+    margin-bottom: 27px;
     color: #373737;
     font-weight: bold;
     font-size: 24px;
@@ -402,7 +417,7 @@ header {
     line-height: 1.4;
     width: 480px;
     text-align: center;
-    margin: 5px 0 30px 0;
+    margin: -5px 0 35px 0;
 
 }
 
@@ -412,6 +427,8 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: -10px;
+    padding-top: 3px;
 }
 
 
@@ -426,6 +443,7 @@ header {
     text-transform: uppercase;
     color: #FFFFFF;
     padding: 0 0 0 16px;
+    width: 184px;
     height: 46px;
 }
 
@@ -445,9 +463,9 @@ header {
     background: #009CC2;
     display: flex;
     justify-content: center;
-    margin-left: 17px;
+    margin-left: 28px;
     height: 46px;
-    width: 59px;
+    width: 46px;
 }
 
 .btn_icon {
@@ -460,8 +478,8 @@ header {
 
 footer {
     height: 184px;
-    background-color: black;
-    color: white;
+    background-color: #000000;
+    color: #ffffff;
     display: flex;
     align-items: center;
 }
@@ -511,7 +529,6 @@ footer {
     font-weight: normal;
     font-size: 14px;
     line-height: 140%;
-    padding-top: 14px;
     padding-left: 184px;
     padding-right: 160px;
 }
