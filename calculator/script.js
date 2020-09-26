@@ -5,6 +5,9 @@ var numbers = document.querySelectorAll('.number'),
     resultBtn = document.getElementById('result'),
     howWorkBtn = document.getElementById('howWorkBtn'),
     display = document.getElementById('display'),
+    sqrtBtn = document.getElementById('sqrt'),
+    minusPlusBtn = document.getElementById('minus-plus'),
+
     MemoryCurrentNumber = 0,
     MemoryNewNumber = false,
     MemoryPendingOperation = '';
@@ -35,7 +38,9 @@ decimalBtn.addEventListener('click', decimal);
 
 resultBtn.addEventListener('click', result);
 
-howWorkBtn.addEventListener('click', howWork);
+sqrtBtn.addEventListener('click', sqrt);
+
+minusPlusBtn.addEventListener('click',minusPlus);
 
 function numberPress(number) {
     if (MemoryNewNumber) {
@@ -65,10 +70,12 @@ function operation(op) {
             MemoryCurrentNumber *= parseFloat(localOperationMemory);
         } else if (MemoryPendingOperation === '/') {
             MemoryCurrentNumber /= parseFloat(localOperationMemory);
+        } else if (MemoryPendingOperation === 'n^x') {
+            MemoryCurrentNumber **= parseFloat(localOperationMemory);
         } else {
             MemoryCurrentNumber = parseFloat(localOperationMemory)
         };
-        display.value = MemoryCurrentNumber;
+        display.value = parseFloat(MemoryCurrentNumber.toFixed(15));
         MemoryPendingOperation = op;
     };
 };
@@ -97,4 +104,23 @@ function clear(id){
         MemoryCurrentNumber = 0;
         MemoryPendingOperation = '';
     };
+};
+
+function sqrt(argument) {
+    var localSqrtMemory = display.value;
+
+    if (localSqrtMemory >= 0) {
+        localSqrtMemory = Math.sqrt(parseFloat(localSqrtMemory));
+        
+    } else {
+        localSqrtMemory = 'ERROR';
+    }
+    display.value = localSqrtMemory;
+    MemoryNewNumber = true;
+};
+
+function minusPlus(argument) {
+    var localminusPlusMemory = display.value;
+    localminusPlusMemory *= -1;
+    display.value = localminusPlusMemory;
 };
