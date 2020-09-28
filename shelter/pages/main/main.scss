@@ -350,3 +350,73 @@ $color-dark-3xl: #292929;
     color: $color-dark-l;
     margin-top: 30px;
 }
+
+.addition {
+background: $color-light-l;
+}
+
+.addition__content {
+    margin-top: 129px;
+    margin-bottom: 103px;
+    padding: 0 143px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addition__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    max-width: 380px;
+}
+
+.addition__title {
+    max-width: 300px;
+}
+
+.addition__subtitle {
+    margin-top: 20px;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+}
+
+.addition__card {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 349px;
+    height: 43px;
+    border-radius: 9px;
+    background-color: $color-primary-color;
+}
+
+.addition__card:hover {
+    background-color: $color-primary-light;
+}
+
+.additional__card-number a {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.addition__description {
+    margin-top: 20px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-dark-m;
+}
