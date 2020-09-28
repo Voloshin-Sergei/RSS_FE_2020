@@ -126,7 +126,8 @@ $color-dark-3xl: #292929;
 }
 
 .hero__subtitle {
-    margin-bottom: 50px;
+    margin-top: 14px;
+    margin-bottom: 10px;
     margin-right: 40px;
     font-family: Arial;
     color: $color-dark-s;
@@ -136,6 +137,7 @@ $color-dark-3xl: #292929;
 }
 
 .hero__button {
+    margin-top: 28px;
     width: 207px;
     height: 52px;
     border-radius: 100px;
@@ -154,12 +156,17 @@ $color-dark-3xl: #292929;
 
 .about {
     display: flex;
-    margin: 90px 0;
 }
 
 .about__content {
     display: flex;
     padding: 0 174px;
+    margin-top: 53px;
+    margin-bottom: 100px;
+}
+
+.about__image {
+    margin-top: 27px;
 }
 
 .about__text {
@@ -172,6 +179,7 @@ $color-dark-3xl: #292929;
 
 .about__title {
     max-width: 370px;
+    margin-top: 26px;
 }
 
 .title {
@@ -189,6 +197,7 @@ $color-dark-3xl: #292929;
     font-size: 15px;
     line-height: 160%;
     color: $color-dark-xl;
+    margin-top: 25px;
 }
 
 .friends {
@@ -204,14 +213,15 @@ $color-dark-3xl: #292929;
 .friends__content {
     display: flex;
     flex-direction: column;
-    margin: 90px 0;
     align-items: center;
+    margin-top: 77px;
 }
 
 .slider {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: 59px;
 }
 
 .slider__content {
@@ -227,7 +237,8 @@ $color-dark-3xl: #292929;
     align-items: center;
     justify-content: space-around;
     background: $color-light-s;
-    margin: 0 45px;
+    margin: 0 46px;
+    padding: 30px;
 }
 
 .slider__item:hover {
@@ -241,6 +252,7 @@ $color-dark-3xl: #292929;
     line-height: 23px;
     letter-spacing: 0.06em;
     color: $color-dark-l;
+    margin-top: 26px;
 }
 
 .slider__button {
@@ -264,6 +276,8 @@ $color-dark-3xl: #292929;
 
 .arrow {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 52px;
     height: 52px;
     background-color: $color-light-l;
@@ -278,3 +292,21 @@ $color-dark-3xl: #292929;
     border: none;
 }
 
+.friends__button {
+    width: 261px;
+    height: 52px;
+    border-radius: 100px;
+    border: none;
+    background-color: $color-primary-color;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin-top: 60px;
+    margin-bottom: 98px;
+}
+
+.friends__button:hover {
+    background-color: $color-primary-light;
+}
