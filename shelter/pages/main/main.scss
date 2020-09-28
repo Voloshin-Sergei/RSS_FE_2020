@@ -420,3 +420,19 @@ background: $color-light-l;
     line-height: 18px;
     color: $color-dark-m;
 }
+
+.footer {
+    background: url(/assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.footer__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer__contacts {
+    
+    display: flex;
+    flex-direction: column;
+}
