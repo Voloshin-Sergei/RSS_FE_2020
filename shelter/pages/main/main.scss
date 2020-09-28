@@ -24,7 +24,7 @@ $color-dark-3xl: #292929;
 .wrapper {
     display: flex;
     margin: 0 auto;
-    max-width: 75rem;
+    max-width: 1200px;
     justify-content: space-between;
 }
 
@@ -42,8 +42,8 @@ $color-dark-3xl: #292929;
 .logo__title {
     color: $color-primary-color;
     font-family: Georgia;
-    font-size: 2rem;
-    letter-spacing: 0.12rem;
+    font-size: 32px;
+    letter-spacing: 0.06em;
     line-height: 110%;
     font-weight: 400;
 }
@@ -51,8 +51,8 @@ $color-dark-3xl: #292929;
 .logo__subtitle {
     margin-top: 10px;
     color: $color-light-xl;
-    font-size: 0.8125rem;
-    letter-spacing: 0.1rem;
+    font-size: 13px;
+    letter-spacing: 0.1em;
     line-height: 110%;
     text-align: center;
     font-weight: 400;
@@ -73,14 +73,16 @@ $color-dark-3xl: #292929;
 .list__item {
     display: flex;
     align-items: center;
+
 }
 
 .list__link {
     color: $color-light-xl;
     font-family: Arial;
-    font-size: 0.9375rem;
+    font-size: 15px;
     line-height: 160%;
     font-weight: 400;
+    text-decoration: none;
 }
 
 .list__link_active {
@@ -115,25 +117,164 @@ $color-dark-3xl: #292929;
 
 .hero__title {
     color: $color-light-xl;
-    font-size: 2.75rem;
+    font-size: 44px;
     line-height: 130%;
     font-family: Georgia;
-    max-width: 19.375rem;
+    max-width: 310px;
     font-weight: 400;
+    margin-bottom: 31px;
 }
 
 .hero__subtitle {
-    margin-top: 2.625rem;
+    margin-bottom: 50px;
+    margin-right: 40px;
     font-family: Arial;
     color: $color-dark-s;
+    font-size: 15px;
     line-height: 160%;
+    font-weight: 400;
 }
 
 .hero__button {
     width: 207px;
-    margin-top: 41px;
+    height: 52px;
     border-radius: 100px;
     border: none;
-    padding: 15px 45px;
     background-color: $color-primary-color;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
 }
+
+.hero__button:hover {
+    background-color: $color-primary-light;
+}
+
+.about {
+    display: flex;
+    margin: 90px 0;
+}
+
+.about__content {
+    display: flex;
+    padding: 0 174px;
+}
+
+.about__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 121px;
+
+}
+
+.about__title {
+    max-width: 370px;
+}
+
+.title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+}
+
+.about__subtitle {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: $color-dark-xl;
+}
+
+.friends {
+    display: flex;;
+    background: $color-light-l;
+    text-align: center;
+}
+
+.friends__title {
+    max-width: 400px;
+}
+
+.friends__content {
+    display: flex;
+    flex-direction: column;
+    margin: 90px 0;
+    align-items: center;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.slider__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__item {
+    width: 270px;
+    height: 435px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: $color-light-s;
+    margin: 0 45px;
+}
+
+.slider__item:hover {
+    background: $color-light-xl;
+}
+
+.slider__name {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+}
+
+.slider__button {
+    width: 187px;
+    height: 52px;
+    background-color: $color-light-s;
+    border: 2px solid $color-primary-color;
+    border-radius: 100px;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-xl;
+}
+
+.slider__button:hover {
+    background-color: $color-primary-light;
+    border: none;
+}
+
+.arrow {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    background-color: $color-light-l;
+    border: 2px solid $color-primary-color;
+    border-radius: 100px;
+    color: $color-dark-3xl;
+    font-size: 24px;
+}
+
+.arrow:hover {
+    background-color: $color-primary-light;
+    border: none;
+}
+
