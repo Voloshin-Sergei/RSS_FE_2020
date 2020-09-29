@@ -154,6 +154,7 @@ $color-dark-3xl: #292929;
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.06em;
+    cursor: pointer;
 }
 
 .hero__button:hover {
@@ -247,6 +248,7 @@ $color-dark-3xl: #292929;
     margin: 0 46px;
     padding: 30px;
     border-radius: 9px;
+    cursor: pointer;
 }
 
 .slider__item:hover {
@@ -277,6 +279,7 @@ $color-dark-3xl: #292929;
     letter-spacing: 0.06em;
     color: $color-dark-xl;
     margin-top: 29px;
+    cursor: pointer;
 }
 
 .slider__button:hover {
@@ -295,6 +298,7 @@ $color-dark-3xl: #292929;
     border-radius: 100px;
     color: $color-dark-3xl;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .arrow:hover {
@@ -315,6 +319,7 @@ $color-dark-3xl: #292929;
     letter-spacing: 0.06em;
     margin-top: 60px;
     margin-bottom: 98px;
+    cursor: pointer;
 }
 
 .friends__button:hover {
