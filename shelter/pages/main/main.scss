@@ -61,6 +61,7 @@ $color-dark-3xl: #292929;
 .menu {
     display: flex;
     width: 443px;
+    margin: 0px 8px;
 }
 
 .list {
@@ -91,6 +92,11 @@ $color-dark-3xl: #292929;
 
 .list__link_disabled {
     color: $color-dark-s;
+}
+
+.list__link:hover {
+    color: $color-light-s;
+    border: 0;
 }
 
 .main {
@@ -240,10 +246,12 @@ $color-dark-3xl: #292929;
     background: $color-light-s;
     margin: 0 46px;
     padding: 30px;
+    border-radius: 9px;
 }
 
 .slider__item:hover {
     background: $color-light-xl;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .slider__name {
@@ -259,7 +267,7 @@ $color-dark-3xl: #292929;
 .slider__button {
     width: 187px;
     height: 52px;
-    background-color: $color-light-s;
+    background: none;
     border: 2px solid $color-primary-color;
     border-radius: 100px;
     font-family: Georgia;
@@ -388,19 +396,26 @@ background: $color-light-l;
 .addition__card {
     margin-top: 20px;
     display: flex;
+    text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 349px;
     height: 43px;
     border-radius: 9px;
     background-color: $color-primary-color;
+    text-decoration: none;
+    padding: 0px 14px;
 }
 
 .addition__card:hover {
     background-color: $color-primary-light;
 }
 
-.additional__card-number a {
+.addition__card-icon {
+    vertical-align: baseline;
+}
+
+.additional__card-number {
     font-family: Georgia;
     font-weight: normal;
     font-size: 20px;
@@ -409,6 +424,10 @@ background: $color-light-l;
     color: $color-dark-l;
     text-decoration: none;
     margin-left: 16px;
+}
+
+.additional__card-number:hover {
+    color: $color-dark-3xl;
 }
 
 .addition__description {

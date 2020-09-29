@@ -40,7 +40,8 @@
 
 .menu {
   display: flex;
-  width: 443px; }
+  width: 443px;
+  margin: 0px 8px; }
 
 .list {
   display: flex;
@@ -65,6 +66,10 @@
 
 .list__link_disabled {
   color: #CDCDCD; }
+
+.list__link:hover {
+  color: #FAFAFA;
+  border: 0; }
 
 .main {
   display: flex;
@@ -190,10 +195,12 @@
   justify-content: space-around;
   background: #FAFAFA;
   margin: 0 46px;
-  padding: 30px; }
+  padding: 30px;
+  border-radius: 9px; }
 
 .slider__item:hover {
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04); }
 
 .slider__name {
   font-family: Georgia;
@@ -207,7 +214,7 @@
 .slider__button {
   width: 187px;
   height: 52px;
-  background-color: #FAFAFA;
+  background: none;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   font-family: Georgia;
@@ -320,17 +327,23 @@
 .addition__card {
   margin-top: 20px;
   display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 349px;
   height: 43px;
   border-radius: 9px;
-  background-color: #F1CDB3; }
+  background-color: #F1CDB3;
+  text-decoration: none;
+  padding: 0px 14px; }
 
 .addition__card:hover {
   background-color: #FDDCC4; }
 
-.additional__card-number a {
+.addition__card-icon {
+  vertical-align: baseline; }
+
+.additional__card-number {
   font-family: Georgia;
   font-weight: normal;
   font-size: 20px;
@@ -339,6 +352,9 @@
   color: #545454;
   text-decoration: none;
   margin-left: 16px; }
+
+.additional__card-number:hover {
+  color: #292929; }
 
 .addition__description {
   margin-top: 20px;
