@@ -29,7 +29,7 @@ $color-dark-3xl: #292929;
 }
 
 .header {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 60px;
 }
@@ -61,7 +61,6 @@ $color-dark-3xl: #292929;
 .menu {
     display: flex;
     width: 443px;
-    margin: 0px 8px;
 }
 
 .list {
@@ -214,7 +213,8 @@ $color-dark-3xl: #292929;
 }
 
 .friends__title {
-
+    display: flex;
+    flex-direction: column;
     max-width: 400px;
 }
 
@@ -451,12 +451,42 @@ background: $color-light-l;
 
 .footer__content {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    margin-top: 40px;
 }
 
 .footer__contacts {
-    
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    margin-right: 140px;
+    padding-bottom: 40px;
+}
+
+
+.footer__title {
+    color: $color-light-xl;
+}
+
+.footer__contact {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+
+.footer__info {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $color-primary-color;
+}
+
+.footer__icon {
+    margin-right: 20px;
+}
+
+.footer__image {
+    display: flex;
+    align-items: flex-end;
 }
