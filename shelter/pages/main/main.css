@@ -184,6 +184,9 @@
   justify-content: space-around;
   margin-top: 59px; }
 
+.slider__photo {
+  background: none; }
+
 .slider__content {
   display: flex;
   justify-content: space-between; }
@@ -194,10 +197,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   background: #FAFAFA;
-  margin: 0 46px;
-  padding: 30px;
+  margin: 0 45px;
   border-radius: 9px;
   cursor: pointer; }
 
@@ -231,7 +232,7 @@
 
 .slider__button:hover {
   background-color: #FDDCC4;
-  border: none; }
+  border: 2px solid #FDDCC4; }
 
 .arrow {
   display: flex;
@@ -243,7 +244,6 @@
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   color: #292929;
-  font-size: 24px;
   cursor: pointer; }
 
 .arrow:hover {
@@ -376,7 +376,7 @@
 
 .footer__content {
   display: flex;
-  margin-top: 40px; }
+  margin-top: 36px; }
 
 .footer__contacts {
   display: flex;
