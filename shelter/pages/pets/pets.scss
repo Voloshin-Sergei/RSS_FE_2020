@@ -41,14 +41,11 @@ $color-dark-3xl: #292929;
 }
 
 .header {
-    margin: 0 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     height: 120px;
     position: sticky;
     top: 0;
+    z-index: 50;
     background-color: $color-light-xl;
 }
 
@@ -147,8 +144,14 @@ $color-dark-3xl: #292929;
     color: $color-dark-l;
 }
 
-.friends__title {
+.friends__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 81px;
+}
+
+.friends__title {
     display: flex;
     flex-direction: column;
     max-width: 400px;
@@ -253,7 +256,6 @@ $color-dark-3xl: #292929;
     background: url(../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     height: 350px;
     display: flex;
-    width: 1280px;
 }
 
 .footer__content {

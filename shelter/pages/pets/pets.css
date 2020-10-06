@@ -24,14 +24,11 @@
   outline: none; }
 
 .header {
-  margin: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 120px;
   position: sticky;
   top: 0;
+  z-index: 50;
   background-color: #FFFFFF; }
 
 .logo {
@@ -114,8 +111,13 @@
   letter-spacing: 0.06em;
   color: #545454; }
 
+.friends__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 81px; }
+
 .friends__title {
-  margin-top: 81px;
   display: flex;
   flex-direction: column;
   max-width: 400px;
@@ -204,8 +206,7 @@
 .footer {
   background: url(../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   height: 350px;
-  display: flex;
-  width: 1280px; }
+  display: flex; }
 
 .footer__content {
   display: flex;
