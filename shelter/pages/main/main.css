@@ -192,7 +192,8 @@
 
 .slider__content {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 .slider__item {
   width: 270px;

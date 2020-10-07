@@ -49,6 +49,11 @@ $color-dark-3xl: #292929;
     background-color: $color-light-xl;
 }
 
+.header__wrapper {
+    max-width: 1200px;
+    padding-top: 30px;
+}
+
 .logo {
     display: flex;
     flex-direction: column;
