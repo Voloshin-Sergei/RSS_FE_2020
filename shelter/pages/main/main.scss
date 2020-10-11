@@ -502,6 +502,28 @@ margin: 0 410px;
     margin-right: 20px;
 }
 
+.menu-burger span, .menu-burger:after, .menu-burger:before{
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background: $color-primary-color;
+    margin: 0 auto;
+
+}
+.menu-burger span{
+    top: 21px;
+}
+.menu-burger:after, .menu-burger:before{
+    content: '';
+}
+.menu-burger:after{
+    bottom: 5px;
+}
+.menu-burger:before{
+    top: 5px;
+}
+
+
 @media screen and (max-width: 1279px) {
     .wrapper {
         max-width: 708px;
@@ -625,5 +647,215 @@ margin: 0 410px;
 
     .footer__location {
     margin-right: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 767px) {
+    h2, h3 {
+        font-size: 25px;
+    }
+
+    .wrapper {
+        max-width: 300px;
+    }
+    
+    .menu {
+        display: none;
+    }
+    .not-only__content {
+        padding: 0px;
+        padding-top: 60px;
+    }
+
+    .not-only__title {
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+
+    .not-only__subtitle {
+        text-align: center;
+    }
+
+    .not-only__image {
+        width: 260px;
+        margin-left: 40px;
+        margin-top: 106px;
+    }
+
+    .not-only__button {
+        margin-left: 47px;
+        margin-top: 42px;
+    }
+
+    .about__wrapper {
+        padding-bottom: 42px;
+    }
+
+    .about__text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .about__title {
+        margin: 0;
+        text-align: center;
+        margin-top: 42px;
+    }
+
+    .about__subtitle {
+        margin: 0 15px;
+        margin-top: 24px;
+        text-align: justify;
+    }
+
+    .about__image {
+        width: 260px;
+        margin-top: 40px;
+    }
+
+    .addition__subtitle {
+        text-align: center;
+    }
+
+    .friends__wrapper {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .slider {
+        margin-top: 22px;
+        flex-wrap: wrap;
+    }
+
+    .slider__item {
+        margin-top: 20px;
+        padding: 0px;
+    }
+
+    .slider__item:nth-child(2) {
+        order: -1;
+    }
+
+    .slider__item:nth-child(3) {
+        display: none;
+    }
+    .button_large {
+        margin-top: 42px;
+    }
+
+    .help__wrapper {
+        padding-top: 41px;
+    }
+
+    .help__title {
+        margin: 0 20px;
+    }
+
+    .help__text {
+        font-size: 15px;
+        margin-top: 17px;
+    }
+
+    .help__items {
+        margin-top: 43px;
+        justify-content: space-between;
+        padding-bottom: 12px;
+    }
+
+    .help__element {
+        width: 130px;
+        height: 87px;
+        margin: 0px 6px;
+        margin-bottom: 30px;
+    }
+
+    .help__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .addition__text {
+        margin: 0px 10px;
+        margin-top: 42px;
+        padding-left: 0px;
+    }
+
+    .addition__title {
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .addition__subtitle {
+        letter-spacing: 0;
+        margin-top: 25px;
+    }
+
+    .addition__card {
+        width: 281px;
+        margin-top: 23px;
+    }
+
+    .additional__card-number {
+        font-size: 15px;
+    }
+
+    .addition__description {
+        margin-right: 0px;
+        text-align: justify;
+    }
+
+    .addition__image {
+        width: 260px;
+        object-fit: contain;
+        margin-top: 43px;
+        margin-bottom: 42px;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column;
+        padding: 0px 0px;
+        text-align: center;
+    }
+
+    .footer__title {
+        font-size: 35px;
+    }
+
+    .footer__contacts {
+        margin-right: 0;
+    }
+
+    .footer__location {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .footer__icon {
+        margin-right: 19px;
+    }
+
+    .footer__contact {
+        margin-left: 10px;
+    }
+
+    .footer__image {
+        width: 260px;
+        object-fit: unset;
+        margin: 0 20px;
+        margin-top: 85px;
+    }
+
+    .footer__address {
+        text-align: left;
+    }
+
+    .menu-burger {
+        display: block;
+        //position: relative;
+        width: 30px;
+        height: 22px;
+        margin-left: 10px;
     }
 }
