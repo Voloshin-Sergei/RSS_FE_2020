@@ -410,6 +410,11 @@ p {
 .footer__icon {
   margin-right: 20px; }
 
+.menu-burger {
+  position: relative;
+  cursor: pointer;
+  display: none; }
+
 @media screen and (max-width: 1279px) {
   .wrapper {
     max-width: 708px; }
@@ -513,6 +518,11 @@ p {
   .footer__location {
     margin-right: 0px; } }
 @media screen and (max-width: 767px) {
+  .menu-burger {
+    display: block;
+    margin-right: 43px;
+    margin-top: 18px; }
+
   h2, h3 {
     font-size: 25px; }
 
