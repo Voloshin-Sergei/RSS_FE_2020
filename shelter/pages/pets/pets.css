@@ -6,6 +6,39 @@
   -o-box-sizing: border-box;
   box-sizing: border-box; }
 
+h1 {
+  font-family: Georgia;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+  line-height: 110%;
+  font-weight: 400; }
+
+h2 {
+  font-size: 44px;
+  line-height: 130%;
+  font-family: Georgia;
+  max-width: 310px;
+  font-weight: 400; }
+
+h3 {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em; }
+
+h4 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em; }
+
+p {
+  font-family: Arial;
+  font-size: 15px;
+  line-height: 160%;
+  font-weight: 400; }
+
 .wrapper {
   display: flex;
   margin: 0 auto;
@@ -40,12 +73,7 @@
   flex-direction: column; }
 
 .logo__title {
-  color: #545454;
-  font-family: Georgia;
-  font-size: 32px;
-  letter-spacing: 0.06em;
-  line-height: 110%;
-  font-weight: 400; }
+  color: #545454; }
 
 .logo__subtitle {
   margin-top: 10px;
@@ -108,11 +136,6 @@
   flex-wrap: wrap; }
 
 .title {
-  font-family: Georgia;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
   color: #545454; }
 
 .friends__content {
@@ -147,7 +170,6 @@
 
 .slider__name {
   font-family: Georgia;
-  font-weight: 400;
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.06em;
@@ -166,12 +188,6 @@
   background-color: #FDDCC4;
   border: 2px solid #FDDCC4; }
 
-.slider__arrow-left {
-  margin-right: 8px; }
-
-.slider__arrow-right {
-  margin-left: 8px; }
-
 .slider__buttons {
   display: flex;
   margin-top: 20px; }
@@ -183,8 +199,6 @@
   margin: 10px;
   width: 52px;
   height: 52px;
-  background-color: #F6F6F6;
-  border: 2px solid #F1CDB3;
   border-radius: 100px;
   font-family: Georgia;
   font-weight: normal;
@@ -195,17 +209,23 @@
   cursor: pointer;
   outline: none; }
 
-.arrow:hover {
+.btn_number {
   background-color: #FDDCC4;
-  border: none; }
+  border: none;
+  cursor: default; }
 
-.arrow_active {
-  background-color: #FDDCC4;
-  border: none; }
-
-.arrow_disabled {
+.btn_left {
   border: 2px solid #CDCDCD;
-  color: #CDCDCD; }
+  color: #CDCDCD;
+  cursor: default; }
+
+.btn_right {
+  background-color: #F6F6F6;
+  border: 2px solid #F1CDB3; }
+
+.btn_right:hover {
+  background-color: #FDDCC4;
+  border: 2px solid #FDDCC4; }
 
 .footer {
   background: url(../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;

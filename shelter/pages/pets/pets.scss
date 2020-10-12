@@ -21,6 +21,45 @@ $color-dark-3xl: #292929;
     box-sizing: border-box;
 }
 
+h1 {
+    font-family: Georgia;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    line-height: 110%;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 44px;
+    line-height: 130%;
+    font-family: Georgia;
+    max-width: 310px;
+    font-weight: 400;
+}
+
+h3 {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+p {
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 160%;
+    font-weight: 400;
+}
+
+
 .wrapper {
     display: flex;
     margin: 0 auto;
@@ -61,11 +100,6 @@ $color-dark-3xl: #292929;
 
 .logo__title {
     color: $color-dark-l;
-    font-family: Georgia;
-    font-size: 32px;
-    letter-spacing: 0.06em;
-    line-height: 110%;
-    font-weight: 400;
 }
 
 .logo__subtitle {
@@ -141,11 +175,6 @@ $color-dark-3xl: #292929;
 } 
 
 .title {
-    font-family: Georgia;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
     color: $color-dark-l;
 }
 
@@ -186,7 +215,6 @@ $color-dark-3xl: #292929;
 
 .slider__name {
     font-family: Georgia;
-    font-weight: 400;
     font-size: 20px;
     line-height: 23px;
     letter-spacing: 0.06em;
@@ -208,18 +236,9 @@ $color-dark-3xl: #292929;
     border: 2px solid $color-primary-light;
 }
 
-.slider__arrow-left {
-    margin-right: 8px;
-}
-
-.slider__arrow-right {
-    margin-left: 8px;
-}
-
 .slider__buttons {
     display: flex;
     margin-top: 20px;
-
 }
 
 .arrow {
@@ -229,8 +248,6 @@ $color-dark-3xl: #292929;
     margin: 10px;
     width: 52px;
     height: 52px;
-    background-color: $color-light-l;
-    border: 2px solid $color-primary-color;
     border-radius: 100px;
     font-family: Georgia;
     font-weight: normal;
@@ -242,19 +259,26 @@ $color-dark-3xl: #292929;
     outline: none;
 }
 
-.arrow:hover {
+.btn_number {
     background-color: $color-primary-light;
     border: none;
+    cursor: default;
 }
 
-.arrow_active {
-    background-color: $color-primary-light;
-    border: none;
-}
-
-.arrow_disabled {
+.btn_left {
     border: 2px solid $color-dark-s;
     color: $color-dark-s;
+    cursor: default;
+}
+
+.btn_right {
+    background-color: $color-light-l;
+    border: 2px solid $color-primary-color;
+}
+
+.btn_right:hover {
+    background-color: $color-primary-light;
+    border: 2px solid $color-primary-light;
 }
 
 .footer {
