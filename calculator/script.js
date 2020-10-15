@@ -2,8 +2,6 @@ var numbers = document.querySelectorAll('.number'),
     operations = document.querySelectorAll('.operation'),
     decimalBtn = document.getElementById('decimal'),
     clearBtns = document.querySelectorAll('.clear-btn'),
-    resultBtn = document.getElementById('result'),
-    howWorkBtn = document.getElementById('howWorkBtn'),
     display = document.getElementById('display'),
     sqrtBtn = document.getElementById('sqrt'),
     minusPlusBtn = document.getElementById('minus-plus'),
@@ -22,7 +20,6 @@ for (var i=0; i<numbers.length; i++) {
 for (var i=0; i<operations.length; i++) {
     var operationBtn = operations[i];
     operationBtn.addEventListener('click', function (e) {
-        console.log();
         operation(e.target.textContent);
     });
 };
@@ -35,8 +32,6 @@ for (var i=0; i<clearBtns.length; i++) {
 };
 
 decimalBtn.addEventListener('click', decimal);
-
-resultBtn.addEventListener('click', result);
 
 sqrtBtn.addEventListener('click', sqrt);
 
@@ -109,14 +104,13 @@ function clear(id){
 function sqrt(argument) {
     var localSqrtMemory = display.value;
 
-    if (localSqrtMemory >= 0) {
+    if (localSqrtMemory > 0) {
         localSqrtMemory = Math.sqrt(parseFloat(localSqrtMemory));
-        
     } else {
-        localSqrtMemory = 'ERROR';
+        localSqrtMemory = 'ERROR!';
+        MemoryNewNumber = true;
     }
     display.value = localSqrtMemory;
-    MemoryNewNumber = true;
 };
 
 function minusPlus(argument) {
