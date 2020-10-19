@@ -1,0 +1,106 @@
+$color-primary-color: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6;
+$color-light-xl: #FFFFFF;
+
+$color-dark-s: #CDCDCD;
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #292929;
+
+@mixin logo_title {
+    font: {
+        family: Georgia;
+        weight: 400;
+        size: 3.2rem;
+    }
+    letter-spacing: 0.17rem;
+    line-height: 110%;
+}
+
+@mixin logo_subtitle {
+    font: {
+        family: Arial;
+        weight: normal;
+        size: 1.3rem;
+    }
+    line-height: 1.5rem;
+    letter-spacing: 0.12rem;
+}
+
+@mixin h2 {
+    font: {
+        family: Georgia;
+        weight: 400;
+        size: 4.4rem;
+    }
+    line-height: 130%;
+}
+
+@mixin h3 {
+    font: {
+        family: Georgia;
+        weight: 400;
+        size: 3.5rem;
+    }
+    line-height: 130%;
+    letter-spacing: 0.2rem;
+}
+
+@mixin h4 {
+    font: {
+        family: Georgia;
+        weight: 400;
+        size: 2rem;
+    }
+    line-height: 115%;
+    letter-spacing: 0.12rem;
+}
+
+@mixin h5 {
+    font: {
+        family: Georgia;
+        weight: 400;
+        size: 1.5rem;
+    }
+    line-height: 110%;
+    letter-spacing: 0.09rem;
+}
+
+@mixin paragraph-l {
+    font: {
+        family: Arial;
+        style: normal;
+        weight: normal;
+        size: 1.5rem;
+    }
+    line-height: 160%;
+}
+
+@mixin paragraph-s {
+    font: {
+        family: Arial;
+        style: italic;
+        weight: normal;
+        size: 1.2rem;
+    }
+line-height: 150%;
+}
+
+@mixin round-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    background: none;
+    border: 2px solid $color-primary-color;
+    border-radius: 100px;
+    color: $color-dark-3xl;
+    cursor: pointer;
+    outline: none;
+}
