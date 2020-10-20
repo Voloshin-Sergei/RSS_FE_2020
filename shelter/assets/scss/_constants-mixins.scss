@@ -51,6 +51,16 @@ $color-dark-3xl: #292929;
     letter-spacing: 0.2rem;
 }
 
+@mixin h3-mobile {
+    font: {
+        family: Georgia;
+        weight: 400;
+        size: 2.5rem;
+    }
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
 @mixin h4 {
     font: {
         family: Georgia;
