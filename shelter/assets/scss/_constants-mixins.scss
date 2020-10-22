@@ -22,6 +22,15 @@ $color-dark-3xl: #292929;
     line-height: 110%;
 }
 
+@mixin paragraph-mobile-menu {
+    font: {
+    family: Arial;
+    weight: normal;
+    size: 32px;
+    }
+    line-height: 160%;
+}
+
 @mixin logo_subtitle {
     font: {
         family: Arial;
