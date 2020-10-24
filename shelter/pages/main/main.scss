@@ -99,6 +99,9 @@
     }
     .list__link {
         @include paragraph-mobile-menu;
+        &_disabled {
+            @include paragraph-mobile-menu;
+        }
     }
 }
 
@@ -113,18 +116,22 @@
     }
     }
         &__link {
-            color: $color-light-xl;
+            color: $color-dark-s;
             @include paragraph-l;
             text-decoration: none; 
             &_active {
+            color: $color-light-xl;
             border-bottom: 3px solid $color-primary-color;
-            //cursor: default;
+            cursor: default;
             }
-        &_disabled {
-            color: $color-dark-s;
-        }
         &:hover {
-            color: $color-light-s;
+        color: $color-light-s;
+        }
+        &_disabled {
+            @include paragraph-l;
+            text-decoration: none;
+            color: $color-dark-s;
+            cursor: default;
         }
     }
 }

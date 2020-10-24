@@ -90,6 +90,11 @@
     font-weight: normal;
     font-size: 32px;
     line-height: 160%; }
+    .mobile-menu .list__link_disabled {
+      font-family: Arial;
+      font-weight: normal;
+      font-size: 32px;
+      line-height: 160%; }
 
 .list {
   display: flex; }
@@ -100,7 +105,7 @@
     .list__item:last-child {
       margin-right: 0px; }
   .list__link {
-    color: #FFFFFF;
+    color: #CDCDCD;
     font-family: Arial;
     font-style: normal;
     font-weight: normal;
@@ -108,11 +113,20 @@
     line-height: 160%;
     text-decoration: none; }
     .list__link_active {
-      border-bottom: 3px solid #F1CDB3; }
-    .list__link_disabled {
-      color: #CDCDCD; }
+      color: #FFFFFF;
+      border-bottom: 3px solid #F1CDB3;
+      cursor: default; }
     .list__link:hover {
       color: #FAFAFA; }
+    .list__link_disabled {
+      font-family: Arial;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.5rem;
+      line-height: 160%;
+      text-decoration: none;
+      color: #CDCDCD;
+      cursor: default; }
 
 .not-only__wrapper {
   display: flex; }
