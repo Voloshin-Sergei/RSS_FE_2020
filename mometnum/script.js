@@ -3,7 +3,19 @@ const time = document.getElementById('time'),
     greeting = document.getElementById('greeting'),
     name = document.getElementById('name'),
     focus = document.getElementById('focus'),
-    date = document.getElementById('date');
+    date = document.getElementById('date'),
+    dayBackground = [];
+
+
+// Сreation background massive
+function backgroundForDay () {
+    for (let i = 0; i < 24; i++) {
+        dayBackground.push(Math.floor(Math.random() * 20));
+        console.log(dayBackground);
+    }
+};
+
+backgroundForDay();
 
 // Show Date 
 function showDate() {
@@ -24,7 +36,9 @@ function showTime() {
         hour = today.getHours(),
         min = today.getMinutes(),
         sec = today.getSeconds();
-
+    if (min == 59 && sec == 59) {
+        setBgGreet();
+    };
 // Output Time
 time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
 
@@ -43,28 +57,27 @@ function setBgGreet() {
 
     if(hour >= 0 && hour < 6) {
         //Night
-        document.body.style.backgroundImage = "url('assets/night/09.jpg')";
+        document.body.style.backgroundImage = `url('assets/night/${dayBackground[hour]}.jpg')`;
         greeting.textContent = 'Good Night,';
-        document.body.style.color = 'white';
     } else if(hour > 6 && hour < 12) {
         //Morning
-        document.body.style.backgroundImage = "url('assets/morning/06.jpg')";
+        document.body.style.backgroundImage = `url('assets/morning/${dayBackground[hour]}.jpg')`;
         greeting.textContent = 'Good Morning,';
     } else if(hour >= 12 && hour < 18) {
         //Afternoon
-        document.body.style.backgroundImage = "url('assets/day/06.jpg')";
+        document.body.style.backgroundImage = `url('assets/day/${dayBackground[hour]}.jpg')`;
         greeting.textContent = 'Good Afternoon,';
     } else {
         // Evening
-        document.body.style.backgroundImage = "url('assets/evening/07.jpg')";
+        document.body.style.backgroundImage = `url('assets/evening/${dayBackground[hour]}.jpg')`;
         greeting.textContent = 'Good Evening,';
-        document.body.style.color = 'white';
     }
+    //setTimeout(setBgGreet, 3600000);
 };
 
 // Get Name
 function getName() {
-    if(localStorage.getItem('name') === null) {
+    if(localStorage.getItem('name') === null || localStorage.getItem('name') === '') {
         name.textContent = '[Enter Name]';
     } else {
         name.textContent = localStorage.getItem('name');
@@ -86,7 +99,7 @@ function setName(e) {
 
 // Get Focus
 function getFocus() {
-    if(localStorage.getItem('focus') === null) {
+    if(localStorage.getItem('focus') === null|| localStorage.getItem('focus') === '') {
         focus.textContent = '[Enter Focus]';
     } else {
         focus.textContent = localStorage.getItem('focus');
@@ -113,12 +126,22 @@ focus.addEventListener('blur', setFocus);
 
 //Show Quote
 
-function randomQuote() {
-    let random = quotes[Math.floor(Math.random() * quotes.length)];
-    quotation.innerText = `“${random.text}.”`;
-    author.innerText = random.author;
+const blockquote = document.querySelector('blockquote');
+const figcaption = document.querySelector('figcaption');
+const btn = document.querySelector('.next-quote');
+
+async function getQuote() {  
+const url = `https://type.fit/api/quotes`;
+const res = await fetch(url);
+const data = await res.json(); 
+let countQuote = parseInt(Math.random()*(data.length -1));
+blockquote.textContent = data[countQuote].text;
+figcaption.textContent = data[countQuote].author;
 }
-document.querySelector("button").addEventListener('click', randomQuote);
+
+document.addEventListener('DOMContentLoaded', getQuote);
+btn.addEventListener('click', getQuote);
+
 
 // Run
 showDate();
@@ -126,4 +149,68 @@ showTime();
 setBgGreet();
 getName();
 getFocus();
-randomQuote();
+
+
+// Change Background Image
+let currentHour = new Date().getHours();
+
+function newImage() {
+    if(currentHour >= 0 && currentHour < 6) {
+        //Night
+        document.body.style.backgroundImage = `url('assets/night/${dayBackground[currentHour]}.jpg')`;
+    } else if(currentHour> 6 && currentHour < 12) {
+        //Morning
+        document.body.style.backgroundImage = `url('assets/morning/${dayBackground[currentHour]}.jpg')`;
+    } else if(currentHour >= 12 && currentHour < 18) {
+        //Afternoon
+        document.body.style.backgroundImage = `url('assets/day/${dayBackground[currentHour]}.jpg')`;
+    } else {
+        // Evening
+        document.body.style.backgroundImage = `url('assets/evening/${dayBackground[currentHour]}.jpg')`;
+    }
+    currentHour++;
+    if (currentHour == 24) {
+        currentHour = 0;
+    }
+};
+
+document.querySelector(".image").addEventListener('click', newImage);
+newImage();
+
+// Show Weather
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const city = document.querySelector('.city');
+
+async function getWeather() {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=en&appid=3eabe3da60a0bd4f4b5a5d7d3763dc4b&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
+
+    weatherIcon.className = 'weather-icon owf';
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${data.main.temp}°C`;
+    weatherDescription.textContent = data.weather[0].description;
+};
+
+function setCity(event) {
+    if (event.code === 'Enter') {
+    getWeather();
+    city.blur();
+    }
+};
+
+document.addEventListener('DOMContentLoaded', getWeather);
+city.addEventListener('keypress', setCity);
+
+// Get City
+function getCity() {
+    if(localStorage.getItem('city') === null|| localStorage.getItem('city') === '') {
+        city.textContent = 'Moscow';
+    } else {
+        city.textContent = localStorage.getItem('city');
+    }
+};
+
+getCity();
