@@ -40,6 +40,10 @@ h2 {
     text-shadow: 2px 2px 3px #000;
 }
 
+#name, #focus {
+    cursor: pointer;
+}
+
 .next-quote, .image {
     cursor: pointer;
     border: none;
@@ -69,6 +73,7 @@ h2 {
 }
 
 .city {
+    cursor: pointer;
     font-size: 3rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 3px #000;
