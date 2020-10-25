@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    color: #fff;
+    background: center center/cover no-repeat;
+    margin: 0 auto;
+    transition: background-image 1.5s ease-in-out;
+}
+
+#time {
+    font-size: 8rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+#date {
+    font-size: 5rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+h1 {
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    opacity: 0.6;
+    text-shadow: 2px 2px 3px #000;
+}
+
+#name, #focus {
+    cursor: pointer;
+}
+
+.next-quote, .image {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #B5B0B1;
+    color: #000;
+    border-radius: 0.5rem;
+    opacity: 0.7;
+}
+
+.image:hover {
+    background:  #eee;
+}
+
+.next-quote {
+    margin-top: 2rem;
+}
+
+.next-quote:hover {
+    background:  #eee;
+}
+.head {
+    margin-bottom: 2rem;
+}
+
+.city {
+    cursor: pointer;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+.weather-icon {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+.temperature {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+.weather-description {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+
+.quote {
+    display: inline-block;
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 10rem;
+    opacity: 0.7;
+}
+.quote figcaption, .quote blockquote {
+    font-size: 1.2rem;
+}
+.quote blockquote {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.quote figcaption {
+    text-align: right;
+    color: #fff;
+}
+
+@media(max-width: 980px) {
+.quote {
+margin: 0 3rem;
+}
+}
+
+@media(max-width: 700px) {
+    #time {
+        font-size: 6rem;
+    }
+}
+
+@media(max-width: 450px) {
+    #date {
+        font-size: 4rem;
+    }
+    .quote {
+        margin: 0 1rem;
+        }
+}
+
+@media(max-width: 400px) {
+    #date {
+        font-size: 3rem;
+    }
+    #time {
+        font-size: 4rem;
+    }
+    h1 {
+        font-size: 2rem;;
+    }
+}
