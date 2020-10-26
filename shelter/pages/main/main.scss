@@ -732,7 +732,9 @@
     }
     &__contacts-title, &__location-title {
         @include h3-mobile;
-        align-items: center;
+        display: block;
+        text-align: center;
+        padding: 0 10px 0 10px;
     }
     &__location {
     margin-bottom: 0rem;

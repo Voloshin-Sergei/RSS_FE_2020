@@ -357,7 +357,9 @@
     }
     &__contacts-title, &__location-title {
         @include h3-mobile;
-        align-items: center;
+        display: block;
+        text-align: center;
+        padding: 0px 15px 0 15px;
     }
     &__location {
     margin-bottom: 0rem;
@@ -367,6 +369,7 @@
     }
     &__location-place {
     margin-bottom: 4rem;
+    padding-left: 10px;
     }
     &__image {
         width: 260px;
