@@ -72,7 +72,7 @@ function setBgGreet() {
         document.body.style.backgroundImage = `url('assets/evening/${dayBackground[hour]}.jpg')`;
         greeting.textContent = 'Good Evening,';
     }
-    //setTimeout(setBgGreet, 3600000);
+    setTimeout(setBgGreet, 120000);
 };
 
 // Get Name

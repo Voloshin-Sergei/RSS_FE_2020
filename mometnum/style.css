@@ -12,11 +12,13 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
     color: #fff;
-    background: center center/cover no-repeat;
     margin: 0 auto;
-    transition: background-image 1.5s ease-in-out;
+    transition: background-image 1s ease-in-out;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center center;
 }
 
 #time {
