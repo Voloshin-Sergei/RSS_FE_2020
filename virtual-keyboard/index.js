@@ -76,7 +76,6 @@ const Keyboard = {
 
         keyLayout.forEach(key => {
             
-            //this.properties.language = !this.properties.language;
             const keyElement = document.createElement("button");
             const insertLineBreak = ["backspace", "p", "enter", "?", "ъ"].indexOf(key) !== -1;
 
@@ -87,23 +86,20 @@ const Keyboard = {
             switch (key) {
                 case "ru":
                     keyElement.innerHTML = key;
-
                     keyElement.addEventListener("click", () => {
                         this._toggleLanguage();
-
                     });
 
                     break;
 
-                    case "en":
-                        keyElement.innerHTML = key;
+                case "en":
+                    keyElement.innerHTML = key;
+                    keyElement.addEventListener("click", () => {
+                        this._toggleLanguage();
     
-                        keyElement.addEventListener("click", () => {
-                            this._toggleLanguage();
+                    });
     
-                        });
-    
-                        break
+                    break
 
                 case "backspace":
                     keyElement.classList.add("keyboard__key--wide");
@@ -161,7 +157,7 @@ const Keyboard = {
                     break;
 
                 default:
-                    keyElement.textContent = key.toLowerCase();
+                    keyElement.textContent = this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
 
                     keyElement.addEventListener("click", () => {
                         this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
@@ -193,7 +189,13 @@ const Keyboard = {
         for (const key of this.elements.keys) {
             if (key.childElementCount === 0) {
                 key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
-            }
+            };
+            if (key.textContent.toLowerCase() === "en") {
+                key.textContent = "en";
+            };
+            if (key.textContent.toLowerCase() === "ru") {
+                key.textContent = "ru";
+            };
         }
     },
 
@@ -201,6 +203,7 @@ const Keyboard = {
         this.properties.language = !this.properties.language;
         this.elements.keysContainer.innerHTML = "";
         this.elements.keysContainer.appendChild(this._createKeys());
+        this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
     },
 
     open(initialValue, oninput, onclose) {
