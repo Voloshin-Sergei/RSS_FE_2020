@@ -1,8 +1,9 @@
-textarea {
-    position: absolute;
-    top: 130px;
-    right: 30px;
-    width: 300px;
+.use-keyboard-input {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    height: calc(100vh - 325px);
+    width: 70%;
 }
 
 .keyboard {
