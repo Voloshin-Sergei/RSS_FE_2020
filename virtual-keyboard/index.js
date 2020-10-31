@@ -12,7 +12,8 @@ const Keyboard = {
 
     properties: {
         value: "",
-        capsLock: false
+        capsLock: false,
+        language: true 
     },
 
     init() {
@@ -43,13 +44,29 @@ const Keyboard = {
 
     _createKeys() {
         const fragment = document.createDocumentFragment();
-        const keyLayout = [
+        const keyLayoutEn = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
+            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "en","?",
             "space"
         ];
+
+        const keyLayoutRu = [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
+            "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ",
+            "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д",  "ж", "э","enter",
+            "done", "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", ",", ".", "ru","?",
+            "space"
+        ];
+
+        let keyLayout;
+
+        if (this.properties.language) {
+            keyLayout = keyLayoutEn;
+        } else {
+            keyLayout = keyLayoutRu;
+        };
 
         // Creates HTML for an icon
         const createIconHtml = (icon_name) => {
@@ -57,8 +74,10 @@ const Keyboard = {
         };
 
         keyLayout.forEach(key => {
+            
+            this.properties.language = !this.properties.language;
             const keyElement = document.createElement("button");
-            const insertLineBreak = ["backspace", "p", "center", "?"].indexOf(key) !== -1;
+            const insertLineBreak = ["backspace", "p", "center", "?", "ъ"].indexOf(key) !== -1;
 
             // Add attributes/classes
             keyElement.setAttribute("type", "button");
