@@ -49,7 +49,7 @@ const Keyboard = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "ru","?",
+            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "en","?",
             "space"
         ];
 
@@ -57,7 +57,7 @@ const Keyboard = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ",
             "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д",  "ж", "э","enter",
-            "done", "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", ",", ".", "en","?",
+            "done", "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", ",", ".", "ru","?",
             "space"
         ];
 
@@ -162,6 +162,7 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
                         this._triggerEvent("oninput");
+                        document.querySelector(".use-keyboard-input").focus();
                     });
 
                     break;
