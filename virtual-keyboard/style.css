@@ -48,6 +48,10 @@
     position: relative;
 }
 
+.keyboard__key:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
 .keyboard__key:active {
     background: rgba(255, 255, 255, 0.12);
 }

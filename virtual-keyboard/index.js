@@ -88,6 +88,7 @@ const Keyboard = {
                     keyElement.innerHTML = key;
                     keyElement.addEventListener("click", () => {
                         this._toggleLanguage();
+                        this._playSound('lang');
                     });
 
                     break;
@@ -96,7 +97,7 @@ const Keyboard = {
                     keyElement.innerHTML = key;
                     keyElement.addEventListener("click", () => {
                         this._toggleLanguage();
-    
+                        this._playSound('lang');
                     });
     
                     break
@@ -108,6 +109,7 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
                         this._triggerEvent("oninput");
+                        this._playSound('backspace');
                     });
 
                     break;
@@ -119,6 +121,7 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this._toggleCapsLock();
                         keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
+                        this._playSound('caps');
                     });
 
                     break;
@@ -130,6 +133,7 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this.properties.value += "\n";
                         this._triggerEvent("oninput");
+                        this._playSound('enter');
                     });
 
                     break;
@@ -141,6 +145,7 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this.properties.value += " ";
                         this._triggerEvent("oninput");
+                        this._playSound('space');
                     });
 
                     break;
@@ -152,6 +157,7 @@ const Keyboard = {
                     keyElement.addEventListener("click", () => {
                         this.close();
                         this._triggerEvent("onclose");
+                        this._playSound('done');
                     });
 
                     break;
@@ -163,6 +169,7 @@ const Keyboard = {
                         this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
                         this._triggerEvent("oninput");
                         document.querySelector(".use-keyboard-input").focus();
+                        this._playSound('key');
                     });
 
                     break;
@@ -205,6 +212,42 @@ const Keyboard = {
         this.elements.keysContainer.innerHTML = "";
         this.elements.keysContainer.appendChild(this._createKeys());
         this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
+    },
+
+    _playSound(type) {
+        let sound;
+
+        switch (type) {
+            case 'key':
+                sound = new Audio(URL='assetse/sounds/key.mp3');
+            break;
+
+            case 'enter':
+                sound = new Audio(URL='assetse/sounds/enter.mp3');
+            break;
+
+            case 'backspace':
+                sound = new Audio(URL='assetse/sounds/backspace.mp3');
+            break;
+
+            case 'caps':
+                sound = new Audio(URL='assetse/sounds/caps.wav');
+            break;
+
+            case 'done':
+                sound = new Audio(URL='assetse/sounds/done.mp3');
+            break;
+
+            case 'lang':
+                sound = new Audio(URL='assetse/sounds/lang.wav');
+            break;
+
+            case 'space':
+                sound = new Audio(URL='assetse/sounds/space.mp3');
+            break;
+        }
+
+        sound.play();
     },
 
     open(initialValue, oninput, onclose) {
