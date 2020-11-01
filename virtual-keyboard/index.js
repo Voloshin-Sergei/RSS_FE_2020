@@ -49,16 +49,16 @@ const Keyboard = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "en","?",
-            "space"
+            "z", "x", "c", "v", "b", "n", "m", ",", ".","?",
+            "done","space", "en"
         ];
 
         const keyLayoutRu = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
-            "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ",
-            "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д",  "ж", "э","enter",
-            "done", "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", ",", ".", "ru","?",
-            "space"
+            "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ","ф",
+            "caps",  "ы", "в", "а", "п", "р", "о", "л", "д",  "ж", "э","enter",
+            "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", ",", ".","?",
+            "done","space", "ru"
         ];
 
         let keyLayout;
@@ -77,7 +77,7 @@ const Keyboard = {
         keyLayout.forEach(key => {
             
             const keyElement = document.createElement("button");
-            const insertLineBreak = ["backspace", "p", "enter", "?", "ъ"].indexOf(key) !== -1;
+            const insertLineBreak = ["backspace", "p", "enter", "?", "ф"].indexOf(key) !== -1;
 
             // Add attributes/classes
             keyElement.setAttribute("type", "button");
