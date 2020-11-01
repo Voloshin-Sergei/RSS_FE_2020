@@ -219,31 +219,31 @@ const Keyboard = {
 
         switch (type) {
             case 'key':
-                sound = new Audio(URL='assetse/sounds/key.mp3');
+                sound = new Audio(URL='assets/sounds/key.mp3');
             break;
 
             case 'enter':
-                sound = new Audio(URL='assetse/sounds/enter.mp3');
+                sound = new Audio(URL='assets/sounds/enter.mp3');
             break;
 
             case 'backspace':
-                sound = new Audio(URL='assetse/sounds/backspace.mp3');
+                sound = new Audio(URL='assets/sounds/backspace.mp3');
             break;
 
             case 'caps':
-                sound = new Audio(URL='assetse/sounds/caps.wav');
+                sound = new Audio(URL='assets/sounds/caps.wav');
             break;
 
             case 'done':
-                sound = new Audio(URL='assetse/sounds/done.mp3');
+                sound = new Audio(URL='assets/sounds/done.mp3');
             break;
 
             case 'lang':
-                sound = new Audio(URL='assetse/sounds/lang.wav');
+                sound = new Audio(URL='assets/sounds/lang.wav');
             break;
 
             case 'space':
-                sound = new Audio(URL='assetse/sounds/space.mp3');
+                sound = new Audio(URL='assets/sounds/space.mp3');
             break;
         }
 
