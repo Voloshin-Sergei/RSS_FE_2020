@@ -14,7 +14,9 @@ const Keyboard = {
     properties: {
         value: "",
         capsLock: false,
-        language: true 
+        language: true,
+        specialKey: false,
+        shift: false
     },
 
     init() {
@@ -50,7 +52,7 @@ const Keyboard = {
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
             "z", "x", "c", "v", "b", "n", "m", ",", ".","?",
-            "done","space", "en"
+            "done","space", "en", "shift"
         ];
 
         const keyLayoutRu = [
@@ -58,7 +60,23 @@ const Keyboard = {
             "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ","ф",
             "caps",  "ы", "в", "а", "п", "р", "о", "л", "д",  "ж", "э","enter",
             "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", ",", ".","?",
-            "done","space", "ru"
+            "done","space", "ru", "shift"
+        ];
+
+        const keyLayoutEnShift = [
+            "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "backspace",
+            "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
+            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
+            "z", "x", "c", "v", "b", "n", "m", "<", ">","?",
+            "done","space", "en", "shift"
+        ];
+
+        const keyLayoutRuShift = [
+            "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "backspace",
+            "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ","ф",
+            "caps",  "ы", "в", "а", "п", "р", "о", "л", "д",  "ж", "э","enter",
+            "я", "ч", "с", "м", "и", "т", "ь",  "б", "ю", "<", ">","?",
+            "done","space", "ru", "shift"
         ];
 
         let keyLayout;
@@ -68,6 +86,13 @@ const Keyboard = {
         } else {
             keyLayout = keyLayoutRu;
         };
+
+        if (this.properties.specialKey && this.properties.language) {
+            keyLayout = keyLayoutEnShift;
+        } else if (this.properties.specialKey && !this.properties.language) {
+            keyLayout = keyLayoutRuShift;
+        };
+
 
         // Creates HTML for an icon
         const createIconHtml = (icon_name) => {
@@ -122,6 +147,21 @@ const Keyboard = {
                         this._toggleCapsLock();
                         keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
                         this._playSound('caps');
+                    });
+
+                    break;
+
+                case "shift":
+                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                    keyElement.innerHTML = key;
+                    if (this.properties.specialKey && this.properties.shift) {
+                        keyElement.classList.add("keyboard__key--active")
+                    }
+                    keyElement.addEventListener("click", () => {
+                        
+                        this._toggleCapsLock();
+                        this._toggleShift();
+                        this._playSound('shift');
                     });
 
                     break;
@@ -204,7 +244,18 @@ const Keyboard = {
             if (key.textContent.toLowerCase() === "ru") {
                 key.textContent = "ru";
             };
+            if (key.textContent.toLowerCase() === "shift") {
+                key.textContent = "shift";
+            };
         }
+    },
+
+    _toggleShift() {
+        this.properties.specialKey = !this.properties.specialKey;
+        this.properties.shift = !this.properties.shift;
+        this.elements.keysContainer.innerHTML = "";
+        this.elements.keysContainer.appendChild(this._createKeys());
+        this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
     },
 
     _toggleLanguage() {
@@ -245,6 +296,14 @@ const Keyboard = {
             case 'space':
                 sound = new Audio(URL='assets/sounds/space.mp3');
             break;
+
+            case 'shift':
+                sound = new Audio(URL='assets/sounds/shift.wav');
+            break;
+
+            case 'open':
+                sound = new Audio(URL='assets/sounds/open.mp3');
+            break;
         }
 
         sound.play();
@@ -255,6 +314,7 @@ const Keyboard = {
         this.eventHandlers.oninput = oninput;
         this.eventHandlers.onclose = onclose;
         this.elements.main.classList.remove("keyboard--hidden");
+        this._playSound('open');
     },
 
     close() {
@@ -262,6 +322,7 @@ const Keyboard = {
         this.eventHandlers.oninput = oninput;
         this.eventHandlers.onclose = onclose;
         this.elements.main.classList.add("keyboard--hidden");
+        
     }
 };
 
