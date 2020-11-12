@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+    border: 2px solid #000000;
+}
+
+.control {
+    width: 100%;
+    border: 2px solid rgb(26, 214, 19);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playing-field {
+    width: 100%;
+    border: 2px solid #dd1e1e;
+}
