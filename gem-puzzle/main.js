@@ -9,6 +9,7 @@ const chipSize = 100;
 
 let moves = 0;
 let time = 0;
+let run = false;
 
 body.append(board);
 board.append(control);
@@ -25,21 +26,22 @@ step.innerHTML = 'Moves: 0';
 playingField.className = 'playing-field';
 
 const setTime = () => {
-  const hour = Math.floor(time / 3600) % 24;
-  let min = Math.floor(time / 60) % 60;
-  let sec = Math.floor(time % 60);
-  time += 1;
+  if (run) {
+    const hour = Math.floor(time / 3600) % 24;
+    let min = Math.floor(time / 60) % 60;
+    let sec = Math.floor(time % 60);
+    time += 1;
 
-  if (min < 10) {
-    min = `0${min}`;
-  }
-  if (sec < 10) {
-    sec = `0${sec}`;
-  }
+    if (min < 10) {
+      min = `0${min}`;
+    }
+    if (sec < 10) {
+      sec = `0${sec}`;
+    }
 
-  timer.innerHTML = `Time: ${hour}:${min}:${sec}`;
-  setTimeout(setTime, 1000);
-  console.log(timer);
+    timer.innerHTML = `Time: ${hour}:${min}:${sec}`;
+    setTimeout(setTime, 1000);
+  }
 };
 
 const game = () => {
@@ -68,17 +70,20 @@ const game = () => {
     chip.top = emptyCellTop;
     moves += 1;
     if (moves === 1 && moves < 2) {
+      run = true;
       setTime();
     }
     step.innerHTML = `Moves: ${moves}`;
-    console.log(moves);
     const isWon = position.every(chip => chip.value === chip.top * 4 + chip.left);
     if (isWon) {
+      run = false;
       alert('You Won!');
+      alert(timer.innerHTML);
+      alert(step.innerHTML);
     }
   };
 
-  const chips = [...Array(15).keys()]; // .sort(() => Math.random() - 0.5);
+  const chips = [...Array(15).keys()].sort(() => Math.random() - 0.5);
   for (let i = 1; i <= 15; i += 1) {
     const chip = document.createElement('div');
     const value = chips[i - 1] + 1;
@@ -109,9 +114,10 @@ const game = () => {
 newGame.addEventListener('click', () => {
   playingField.innerHTML = '';
   moves = 0;
+  time = 0;
   step.innerHTML = 'Moves: 0';
   timer.innerHTML = 'Time: 0:00:00';
-
+  run = false;
   game();
 });
 

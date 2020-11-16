@@ -1,5 +1,4 @@
 * {
-    
     margin: 0 auto;
 }
 
@@ -42,6 +41,7 @@ body {
     color: aliceblue;
     outline: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .new-game-btn:hover {
@@ -70,6 +70,8 @@ body {
     box-sizing: border-box;
     transition: all 0.2s;
     color: aliceblue;
+    user-select: none;
+    cursor: pointer;
 }
 
 .chip:hover {
