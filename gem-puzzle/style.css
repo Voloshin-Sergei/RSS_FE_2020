@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+
     margin: 0 auto;
 }
 
@@ -24,6 +24,19 @@
 }
 
 .playing-field {
-    width: 100%;
-    border: 2px solid #dd1e1e;
+    width: 400px;
+    height: 400px;
+    border: 3px solid #dd1e1e;
+    border-radius: 10px;
+    position: relative;
+}
+
+.chip {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #3d12db;
+    border-radius: 10px;
+    position: absolute;
+    box-sizing: border-box;
+    transition: all 0.2s;
 }
