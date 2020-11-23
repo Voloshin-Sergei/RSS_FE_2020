@@ -49,6 +49,12 @@ const setTime = () => {
   }
 };
 
+const soundMove = () => {
+  const sound = new Audio();
+  sound.src = 'move.mp3';
+  sound.play();
+};
+
 const startGame = () => {
   moves = 0;
   const emptyCell = { left: 0, top: 0, value: 0 };
@@ -78,6 +84,7 @@ const startGame = () => {
       run = true;
       setTime();
     }
+    soundMove();
     step.innerHTML = `Moves: ${moves}`;
     const isWon = position.every(chip => chip.value === chip.top * 4 + chip.left);
     if (isWon) {
