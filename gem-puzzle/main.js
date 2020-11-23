@@ -11,31 +11,36 @@ let moves = 0;
 let time = 0;
 let run = false;
 
-body.append(board);
-board.append(control);
-control.append(timer);
-control.append(newGame);
-control.append(step);
-board.append(playingField);
-board.className = 'board';
-control.className = 'control';
-newGame.className = 'new-game-btn';
-timer.innerHTML = 'Time: 0:00:00';
-newGame.innerHTML = 'New Game';
-step.innerHTML = 'Moves: 0';
-playingField.className = 'playing-field';
+const createBoard = () => {
+  board.className = 'board';
+  control.className = 'control';
+  newGame.className = 'new-game-btn';
+  playingField.className = 'playing-field';
+
+  body.append(board);
+  board.append(control);
+  control.append(timer);
+  control.append(newGame);
+  control.append(step);
+  board.append(playingField);
+
+  timer.innerHTML = 'Time: 0:00:00';
+  newGame.innerHTML = 'New Game';
+  step.innerHTML = 'Moves: 0';
+};
 
 const setTime = () => {
+  const twoDigitTimerValue = 10;
   if (run) {
     const hour = Math.floor(time / 3600) % 24;
     let min = Math.floor(time / 60) % 60;
     let sec = Math.floor(time % 60);
     time += 1;
 
-    if (min < 10) {
+    if (min < twoDigitTimerValue) {
       min = `0${min}`;
     }
-    if (sec < 10) {
+    if (sec < twoDigitTimerValue) {
       sec = `0${sec}`;
     }
 
@@ -44,7 +49,7 @@ const setTime = () => {
   }
 };
 
-const game = () => {
+const startGame = () => {
   moves = 0;
   const emptyCell = { left: 0, top: 0, value: 0 };
 
@@ -84,6 +89,9 @@ const game = () => {
   };
 
   const chips = [...Array(15).keys()].sort(() => Math.random() - 0.5);
+  /* an array of numbers from 0 to 15
+  is sorted randomly by the Math method,
+   with a step of 0.5 half the width of the generated range */
   for (let i = 1; i <= 15; i += 1) {
     const chip = document.createElement('div');
     const value = chips[i - 1] + 1;
@@ -108,6 +116,7 @@ const game = () => {
     chip.addEventListener('click', () => {
       move(i);
     });
+    chip.removeEventListener('click', move);
   }
 };
 
@@ -118,7 +127,7 @@ newGame.addEventListener('click', () => {
   step.innerHTML = 'Moves: 0';
   timer.innerHTML = 'Time: 0:00:00';
   run = false;
-  game();
+  startGame();
 });
 
-game();
+createBoard();
