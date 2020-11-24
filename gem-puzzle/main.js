@@ -6,6 +6,10 @@ const timer = document.createElement('div');
 const newGame = document.createElement('button');
 const step = document.createElement('div');
 const chipSize = 100;
+const wonWindow = document.createElement('div');
+const wonTime = document.createElement('div');
+const wonMoves = document.createElement('div');
+const closeBtn = document.createElement('span');
 
 let moves = 0;
 let time = 0;
@@ -16,6 +20,8 @@ const createBoard = () => {
   control.className = 'control';
   newGame.className = 'new-game-btn';
   playingField.className = 'playing-field';
+  wonWindow.className = 'window';
+  closeBtn.className = 'closeBtn';
 
   body.append(board);
   board.append(control);
@@ -23,6 +29,8 @@ const createBoard = () => {
   control.append(newGame);
   control.append(step);
   board.append(playingField);
+
+  board.append(wonWindow);
 
   timer.innerHTML = 'Time: 0:00:00';
   newGame.innerHTML = 'New Game';
@@ -53,6 +61,17 @@ const soundMove = () => {
   const sound = new Audio();
   sound.src = 'move.mp3';
   sound.play();
+};
+
+const modalWindow = (gameTime, gameMoves) => {
+  wonWindow.style.display = 'flex';
+  wonWindow.innerHTML = 'You Won!';
+  wonWindow.append(closeBtn);
+  closeBtn.innerHTML = '&times';
+  wonWindow.append(wonTime);
+  wonTime.innerHTML = gameTime;
+  wonWindow.append(wonMoves);
+  wonMoves.innerHTML = gameMoves;
 };
 
 const startGame = () => {
@@ -89,9 +108,9 @@ const startGame = () => {
     const isWon = position.every(chip => chip.value === chip.top * 4 + chip.left);
     if (isWon) {
       run = false;
-      alert('You Won!');
-      alert(timer.innerHTML);
-      alert(step.innerHTML);
+      let gameTime = timer.innerHTML;
+      let gameMoves = step.innerHTML;
+      modalWindow(gameTime, gameMoves);
     }
   };
 
@@ -126,6 +145,10 @@ const startGame = () => {
     chip.removeEventListener('click', move);
   }
 };
+
+closeBtn.addEventListener('click', () => {
+  wonWindow.style.display = 'none';
+});
 
 newGame.addEventListener('click', () => {
   playingField.innerHTML = '';
