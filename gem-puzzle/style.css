@@ -29,7 +29,6 @@ body {
 }
 
 .control div {
-    width: 33.3%;
     text-align: center;
 }
 
@@ -103,4 +102,10 @@ body {
     height: 30px;
     font-size: 35px;
     cursor: pointer;
+}
+
+.bestScore {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 350px;
 }

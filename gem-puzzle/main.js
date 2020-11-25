@@ -3,6 +3,7 @@ const board = document.createElement('div');
 const playingField = document.createElement('div');
 const control = document.createElement('div');
 const timer = document.createElement('div');
+const timerShow = document.createElement('div');
 const newGame = document.createElement('button');
 const step = document.createElement('div');
 const chipSize = 100;
@@ -10,10 +11,14 @@ const wonWindow = document.createElement('div');
 const wonTime = document.createElement('div');
 const wonMoves = document.createElement('div');
 const closeBtn = document.createElement('span');
+const bestScore = document.createElement('div');
 
 let moves = 0;
 let time = 0;
 let run = false;
+
+localStorage.setItem('bestMovies', '0');
+localStorage.setItem('bestTime', 0);
 
 const createBoard = () => {
   board.className = 'board';
@@ -22,17 +27,20 @@ const createBoard = () => {
   playingField.className = 'playing-field';
   wonWindow.className = 'window';
   closeBtn.className = 'closeBtn';
+  bestScore.className = 'bestScore';
 
   body.append(board);
   board.append(control);
   control.append(timer);
+  control.append(timerShow);
   control.append(newGame);
   control.append(step);
   board.append(playingField);
 
   board.append(wonWindow);
 
-  timer.innerHTML = 'Time: 0:00:00';
+  timer.innerHTML = 'Time: ';
+  timerShow.innerHTML = '0:00:00';
   newGame.innerHTML = 'New Game';
   step.innerHTML = 'Moves: 0';
 };
@@ -51,8 +59,7 @@ const setTime = () => {
     if (sec < twoDigitTimerValue) {
       sec = `0${sec}`;
     }
-
-    timer.innerHTML = `Time: ${hour}:${min}:${sec}`;
+    timerShow.innerHTML = `${hour}:${min}:${sec}`;
     setTimeout(setTime, 1000);
   }
 };
@@ -69,9 +76,9 @@ const modalWindow = (gameTime, gameMoves) => {
   wonWindow.append(closeBtn);
   closeBtn.innerHTML = '&times';
   wonWindow.append(wonTime);
-  wonTime.innerHTML = gameTime;
+  wonTime.innerHTML = `Time: ${gameTime}`;
   wonWindow.append(wonMoves);
-  wonMoves.innerHTML = gameMoves;
+  wonMoves.innerHTML = `Moves: ${gameMoves}`;
 };
 
 const startGame = () => {
@@ -108,8 +115,17 @@ const startGame = () => {
     const isWon = position.every(chip => chip.value === chip.top * 4 + chip.left);
     if (isWon) {
       run = false;
-      let gameTime = timer.innerHTML;
-      let gameMoves = step.innerHTML;
+      let gameTime = timerShow.innerHTML;
+      console.log(typeof gameTime);
+      let gameMoves = moves;
+      if (Number(gameTime.split(':').join('')) < Number(localStorage.getItem('bestTime').split(':').join('')) || localStorage.getItem('bestTime') === '0') {
+        localStorage.setItem('bestTime', gameTime);
+      }
+      if (gameMoves < Number(localStorage.getItem('bestMovies')) || Number(localStorage.getItem('bestMovies')) === 0) {
+        localStorage.setItem('bestMovies', gameMoves);
+      }
+      body.append(bestScore);
+      bestScore.innerHTML = `Your best result: ${localStorage.getItem('bestTime')} Movies: ${localStorage.getItem('bestMovies')}`;
       modalWindow(gameTime, gameMoves);
     }
   };
@@ -155,7 +171,7 @@ newGame.addEventListener('click', () => {
   moves = 0;
   time = 0;
   step.innerHTML = 'Moves: 0';
-  timer.innerHTML = 'Time: 0:00:00';
+  timerShow.innerHTML = '0:00:00';
   run = false;
   startGame();
 });
