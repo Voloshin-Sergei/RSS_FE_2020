@@ -36,47 +36,104 @@ a {
 }
 
 .header__container {
+  position: relative;
   padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.toggle-nav {
+.nav {
   position: absolute;
-  top: 60px;
-}
-
-.menu-toggle {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 30px;
-}
-.menu-toggle span {
-  height: 5px;
-  width: 100%;
-  background-color:#3156a6;
+  max-width: 320px;
+  height: 100vh;
+  top: 0;
+  left: -100vw;
+  box-shadow: 10px 0 5px 2px rgba(0,0,0,.12);
+  transition: left 0.4s;
 }
 
-.toggle-menu {
-  display: none;
+.nav-visible {
+  left: 0;
+  transition: left 0.4s;
+}
+
+.menu {
+  margin: 0;
   text-align: center;
   list-style: none;
+  background-color:#3cc7f4;
+  padding: 90px 30px 0 30px;
 }
 
-.toggle-menu__item {
+.menu.game {
+  background-color:#fd9827;
+}
+
+.menu__item {
   margin: 20px;
 }
 
-.toggle-menu__link {
+.menu__link {
   color: #3156a6;
   font-size: 35px;
 }
 
-.toggle-menu__link:hover {
-  border-bottom: 4px solid #3156a6;
+.menu__link:hover {
+  border-bottom: 4px solid #d82b7a;
+  color: #d82b7a;
+}
+
+.menu-button {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background:#3156a6;
+}
+
+.menu-button span::before, .menu-button span::after {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background:#3156a6;
+  content: "";
+}
+
+.menu-button span::before {
+  top: -15px;
+}
+
+.menu-button span::after {
+  bottom: -15px;
+}
+
+.menu-button span, .menu-button span::before, .menu-button span::after {
+  transition-duration: 0.3s;
+
+}
+
+.menu-button.is-active span {
+  background: none;
+}
+
+.menu-button.is-active span::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-button.is-active span::after {
+  bottom: 0;
+  transform: rotate(45deg);
 }
 
 .header-title {
@@ -141,7 +198,7 @@ a {
   background: #ffffff;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,.16), 0 10px 10px 0 rgba(0,0,0,.12);
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .cards__item:hover {
@@ -184,10 +241,10 @@ a {
 
 @media (max-width: 850px) {
   .header__container {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
-  .header__container:nth-child(3) {
-    order: -1;
+  .header__container:nth-child(2) {
+    order: 1;
   }
 }
