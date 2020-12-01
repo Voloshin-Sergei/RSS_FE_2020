@@ -142,6 +142,7 @@ a {
   font-size: 80px;
   color:#68DD92;
   text-shadow: #000000 3px 2px 10px;
+  cursor: pointer;
 }
 
 .label {
@@ -180,18 +181,19 @@ a {
   transform: translateX(24px);
 }
 
-.cards {
+.cards, .words {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.cards__item {
+.cards__item, .words__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 210px;
+  min-height: 311px;
   margin: 20px 20px;
   padding: 20px;
   width: 100%;
@@ -202,11 +204,11 @@ a {
   transition: 0.5s;
 }
 
-.cards__item:hover {
+.cards__item:hover, .words__item:hover {
   box-shadow: 0 20px 20px 0 rgba(0,0,0,.16), 0 10px 10px 0 rgba(0,0,0,.12);
 }
 
-.cards__item:hover .card-title {
+.cards__item:hover .card-title, .words__item:hover .card-title {
   color: #d82b7a;
 }
 
@@ -217,7 +219,7 @@ a {
   margin-bottom: 20px;
 }
 
-.cards__item span {
+.cards__item span, .words__item span {
   height: 5px;
   width: 80%;
   background-color: #3156a6;
@@ -229,6 +231,15 @@ a {
   font-size: 30px;
   color: #3156a6;
   transition: .5s;
+}
+
+.reverse-image {
+  width: 30px;
+  height: 30px;
+}
+
+.hide {
+  display: none;
 }
 
 .footer__container {

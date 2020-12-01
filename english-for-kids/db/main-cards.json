@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Animals",
+    "image": "assets/img/card_img/animals/animals.svg",
+    "words": "animals.json"
+  },
+  {
+    "name": "Clothes",
+    "image": "assets/img/card_img/clothes/clothes.svg",
+    "words": "clothes.json"
+  },
+  {
+    "name": "Family",
+    "image": "assets/img/card_img/family/family.svg",
+    "words": "family.json"
+  },
+  {
+    "name": "Food",
+    "image": "assets/img/card_img/food/food.svg",
+    "words": "food.json"
+  },
+  {
+    "name": "Kitchen",
+    "image": "assets/img/card_img/kitchen/kitchen.svg",
+    "words": "kitchen.json"
+  },
+  {
+    "name": "Nature",
+    "image": "assets/img/card_img/nature/nature.svg",
+    "words": "nature.json"
+  }
+  ,
+  {
+    "name": "School",
+    "image": "assets/img/card_img/school/school.svg",
+    "words": "school.json"
+  }
+  ,
+  {
+    "name": "Weather",
+    "image": "assets/img/card_img/weather/weather.svg",
+    "words": "weather.json"
+  }
+]
