@@ -1,0 +1,286 @@
+@font-face {
+  font-family: NerKoOne;
+  src: url("../assets/fonts/NerkoOne-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: FredokaOne;
+  src: url("../assets/fonts/FredokaOne-Regular.ttf");
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3cc7f4;
+  font-family: 'FredokaOne', sans-serif;
+  letter-spacing: 2px;
+  transition: background-color 0.2s linear;
+}
+
+body.game {
+  background-color: #fd9827;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overflow-hidden {
+  overflow: hidden; }
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.header__container {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav {
+  position: absolute;
+  display: flex;
+  max-width: 320px;
+  height: 100vh;
+  top: 0;
+  left: -100vw;
+  box-shadow: 10px 0 5px 2px rgba(0,0,0,.12);
+  transition: left 0.4s;
+}
+
+.nav-visible {
+  left: 0;
+  transition: left 0.4s;
+}
+
+.menu {
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  background-color:#3cc7f4;
+  padding: 90px 30px 0 30px;
+}
+
+.menu.game {
+  background-color:#fd9827;
+}
+
+.menu__item {
+  margin: 20px;
+}
+
+.menu__link {
+  color: #3156a6;
+  font-size: 35px;
+}
+
+.menu__link:hover {
+  border-bottom: 4px solid #d82b7a;
+  color: #d82b7a;
+}
+
+.menu-button {
+  position: relative;
+  top: 22px;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background:#3156a6;
+}
+
+.menu-button span::before, .menu-button span::after {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background:#3156a6;
+  content: "";
+}
+
+.menu-button span::before {
+  top: -15px;
+}
+
+.menu-button span::after {
+  bottom: -15px;
+}
+
+.menu-button span, .menu-button span::before, .menu-button span::after {
+  transition-duration: 0.3s;
+
+}
+
+.menu-button.is-active span {
+  background: none;
+}
+
+.menu-button.is-active span::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-button.is-active span::after {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+.header-title {
+  margin: 0;
+  display: inline-block;
+  font-family: "NerKoOne", sans-serif;
+  font-size: 80px;
+  color:#68DD92;
+  text-shadow: #000000 3px 2px 10px;
+  cursor: pointer;
+}
+
+.label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #fd9827;
+  border: solid 3px #ffffff;
+  height: 36px;
+  width: 60px;
+  transition: background-color 0.2s linear;
+}
+
+.label.game {
+  background-color: #3cc7f4;
+}
+
+.checkbox {
+  opacity: 0;
+}
+
+.ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.cards, .words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cards__item, .words__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 210px;
+  min-height: 311px;
+  margin: 20px 20px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,.16), 0 10px 10px 0 rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.cards__item:hover, .words__item:hover {
+  box-shadow: 0 20px 20px 0 rgba(0,0,0,.16), 0 10px 10px 0 rgba(0,0,0,.12);
+}
+
+.cards__item:hover .card-title, .words__item:hover .card-title {
+  color: #d82b7a;
+}
+
+.card-image {
+  width: 120px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.cards__item span, .words__item span {
+  height: 5px;
+  width: 80%;
+  background-color: #3156a6;
+  margin-bottom: 10px;
+  transition: .5s;
+}
+
+.card-title {
+  font-size: 30px;
+  color: #3156a6;
+  transition: .5s;
+}
+
+.reverse-image {
+  width: 30px;
+  height: 30px;
+}
+
+.hide {
+  display: none;
+}
+
+.footer__container {
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-title {
+  color: #ffffff;
+}
+
+@media (max-width: 710px) {
+  .header__container {
+    flex-wrap: wrap;
+  }
+
+  .menu-button {
+    order: -1;
+  }
+  .switch {
+    order: -1;
+  }
+}
+
+@media (max-width: 570px) {
+  .header-title {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 430px) {
+  .header-title {
+    font-size: 43px;
+  }
+}

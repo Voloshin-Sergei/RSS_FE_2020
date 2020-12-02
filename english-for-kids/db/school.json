@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Board",
+    "image": "assets/img/card_img/school/board.svg",
+    "sound": "assets/img/card_sounds/school/board.mp3",
+    "translation": "Доска"
+  },
+  {
+    "name": "Book",
+    "image": "assets/img/card_img/school/book.svg",
+    "sound": "assets/img/card_sounds/school/book.mp3",
+    "translation": "Книга"
+  },
+  {
+    "name": "Map",
+    "image": "assets/img/card_img/school/map.svg",
+    "sound": "assets/img/card_sounds/school/map.mp3",
+    "translation": "Карта"
+  },
+  {
+    "name": "Pen",
+    "image": "assets/img/card_img/school/pen.svg",
+    "sound": "assets/img/card_sounds/school/pen.mp3",
+    "translation": "Ручка"
+  },
+  {
+    "name": "Pencil",
+    "image": "assets/img/card_img/school/pencil.svg",
+    "sound": "assets/img/card_sounds/school/pencil.mp3",
+    "translation": "Карандаш"
+  },
+  {
+    "name": "Schoolbag",
+    "image": "assets/img/card_img/school/schoolbag.svg",
+    "sound": "assets/img/card_sounds/school/schoolbag.mp3",
+    "translation": "Портфель"
+  }
+  ,
+  {
+    "name": "Schoolboy",
+    "image": "assets/img/card_img/school/schoolboy.svg",
+    "sound": "assets/img/card_sounds/school/schoolboy.mp3",
+    "translation": "Ученик"
+  }
+  ,
+  {
+    "name": "Teacher",
+    "image": "assets/img/card_img/school/teacher.svg",
+    "sound": "assets/img/card_sounds/school/teacher.mp3",
+    "translation": "Учитель"
+  }
+]
