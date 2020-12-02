@@ -29,6 +29,9 @@ a {
   text-decoration: none;
 }
 
+.overflow-hidden {
+  overflow: hidden; }
+
 .container {
   max-width: 1200px;
   padding: 0 30px;
@@ -84,7 +87,7 @@ a {
   color: #d82b7a;
 }
 
-.menu-button { /* TODO fix style */
+.menu-button {
   position: relative;
   top: 22px;
   width: 40px;
@@ -137,6 +140,7 @@ a {
 }
 
 .header-title {
+  margin: 0;
   display: inline-block;
   font-family: "NerKoOne", sans-serif;
   font-size: 80px;
@@ -214,7 +218,6 @@ a {
 
 .card-image {
   width: 120px;
-  border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
 }

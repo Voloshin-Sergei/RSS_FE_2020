@@ -8,6 +8,7 @@ const cardsWithWords = document.querySelector('.words');
 const cardsContainer = document.querySelector('.cards__container');
 const wordsContainer = document.querySelector('.words__container');
 const headerTitle = document.querySelector('.header-title');
+const body = document.querySelector('body');
 
 // Access to database
 const getData = async function (url) {
@@ -22,10 +23,18 @@ const startGame = () => {
   menu.classList.toggle('game');
 };
 
-// Open or close navbar menu // TODO add no scrolling
+// Create navbar menu
+const createMenu = (data) => {
+  const { name, words } = data;
+  const menuLink = `<li class="menu__item" data-words="${words}"><a href="#" class="menu__link">${name}</a></li>`;
+  menu.insertAdjacentHTML('beforeend', menuLink);
+};
+
+// Open or close navbar menu
 const showMenu = () => {
   menuButton.classList.toggle('is-active');
   navigation.classList.toggle('nav-visible');
+  body.classList.toggle('overflow-hidden');
 };
 
 // Create card in main page
@@ -40,23 +49,29 @@ const createCard = (card) => {
   cardsOnMainPage.insertAdjacentHTML('beforeend', mainCard);
 };
 
+// Play sound card
+const playSound = () => {
+  const sound = new Audio();
+  sound.src = "";
+  sound.play();
+};
+
 // Create word card
 const createCardWord = (words) => {
   const { name, image } = words;
-  const wordCard = document.createElement('div');
-  wordCard.className = 'words__item';
-  wordCard.insertAdjacentHTML('beforeend', `
+  const wordCard = `
+                  <div class="words__item">
                     <img class="card-image" src="${image}"></img>
                     <span></span>
                     <h2 class="card-title">${name}</h2>
                     <div><img class="reverse-image" src="assets/img/icon/reverse.svg"></img></div>
-  `);
-  cardsWithWords.insertAdjacentElement('beforeend', wordCard);
+                    </div>`;
+  cardsWithWords.insertAdjacentHTML('beforeend', wordCard);
 };
 
 // Open page cards with words
 const openCards = (event) => {
-  const { target } = event; // TODO maybe without this
+  const { target } = event;
   const wordCard = target.closest('.cards__item');
   if (wordCard) {
     cardsWithWords.textContent = '';
@@ -68,6 +83,23 @@ const openCards = (event) => {
   }
 };
 
+// Open page cards with words
+const menuOpenCards = (event) => {
+  const { target } = event;
+  const wordCard = target.closest('.menu__item');
+  if (wordCard) {
+    cardsWithWords.textContent = '';
+    cardsContainer.classList.add('hide');
+    wordsContainer.classList.remove('hide');
+    getData(`./db/${wordCard.dataset.words}`).then((data) => {
+      data.forEach(createCardWord);
+    });
+    menuButton.classList.remove('is-active');
+    navigation.classList.remove('nav-visible');
+    body.classList.remove('overflow-hidden');
+  }
+};
+
 // Return to mane Page
 const returnManePage = () => {
   cardsContainer.classList.remove('hide');
@@ -75,10 +107,22 @@ const returnManePage = () => {
 };
 
 getData('./db/main-cards.json').then((data) => {
+  console.log(data);
   data.forEach(createCard);
+  data.forEach(createMenu);
 });
 
 checkbox.addEventListener('click', startGame);
 menuButton.addEventListener('click', showMenu);
 cardsOnMainPage.addEventListener('click', openCards);
 headerTitle.addEventListener('click', returnManePage);
+menu.addEventListener('click', menuOpenCards);
+
+// TEST
+const test = (event) => {
+  const { target } = event;
+  const wordCard = target.closest('.words__item');
+  console.log(wordCard);
+};
+
+cardsWithWords.addEventListener('click', test);
