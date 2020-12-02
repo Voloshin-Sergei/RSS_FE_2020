@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Bird",
+    "image": "assets/img/card_img/animals/bird.svg",
+    "sound": "assets/img/card_sounds/animals/bird.mp3",
+    "translation": "Птица"
+  },
+  {
+    "name": "Cat",
+    "image": "assets/img/card_img/animals/cat.svg",
+    "sound": "assets/img/card_sounds/animals/cat.mp3",
+    "translation": "Кошка"
+  },
+  {
+    "name": "Dog",
+    "image": "assets/img/card_img/animals/dog.svg",
+    "sound": "assets/img/card_sounds/animals/dog.mp3",
+    "translation": "Собака"
+  },
+  {
+    "name": "Dolphin",
+    "image": "assets/img/card_img/animals/dolphin.svg",
+    "sound": "assets/img/card_sounds/animals/dolphin.mp3",
+    "translation": "Дельфин"
+  },
+  {
+    "name": "Frog",
+    "image": "assets/img/card_img/animals/frog.svg",
+    "sound": "assets/img/card_sounds/animals/frog.mp3",
+    "translation": "Лягушка"
+  },
+  {
+    "name": "Lion",
+    "image": "assets/img/card_img/animals/lion.svg",
+    "sound": "assets/img/card_sounds/animals/lion.mp3",
+    "translation": "Лев"
+  }
+  ,
+  {
+    "name": "Mouse",
+    "image": "assets/img/card_img/animals/mouse.svg",
+    "sound": "assets/img/card_sounds/animals/mouse.mp3",
+    "translation": "Мышь"
+  }
+  ,
+  {
+    "name": "Pig",
+    "image": "assets/img/card_img/animals/pig.svg",
+    "sound": "assets/img/card_sounds/animals/pig.mp3",
+    "translation": "Свинья"
+  }
+]

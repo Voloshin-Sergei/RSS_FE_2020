@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Blouse",
+    "image": "assets/img/card_img/clothes/blouse.svg",
+    "sound": "assets/img/card_sounds/clothes/blouse.mp3",
+    "translation": "Блузка"
+  },
+  {
+    "name": "Boot",
+    "image": "assets/img/card_img/clothes/boot.svg",
+    "sound": "assets/img/card_sounds/clothes/boot.mp3",
+    "translation": "Ботинок"
+  },
+  {
+    "name": "Coat",
+    "image": "assets/img/card_img/clothes/coat.svg",
+    "sound": "assets/img/card_sounds/clothes/coat.mp3",
+    "translation": "Пальто"
+  },
+  {
+    "name": "Dress",
+    "image": "assets/img/card_img/clothes/dress.svg",
+    "sound": "assets/img/card_sounds/clothes/dress.mp3",
+    "translation": "Платье"
+  },
+  {
+    "name": "Pants",
+    "image": "assets/img/card_img/clothes/pants.svg",
+    "sound": "assets/img/card_sounds/clothes/pants.mp3",
+    "translation": "Штаны"
+  },
+  {
+    "name": "Shirt",
+    "image": "assets/img/card_img/clothes/shirt.svg",
+    "sound": "assets/img/card_sounds/clothes/shirt.mp3",
+    "translation": "Рубашка"
+  }
+  ,
+  {
+    "name": "Shoe",
+    "image": "assets/img/card_img/clothes/shoe.svg",
+    "sound": "assets/img/card_sounds/clothes/shoe.mp3",
+    "translation": "Туфля"
+  }
+  ,
+  {
+    "name": "Skirt",
+    "image": "assets/img/card_img/clothes/skirt.svg",
+    "sound": "assets/img/card_sounds/clothes/skirt.mp3",
+    "translation": "Юбка"
+  }
+]

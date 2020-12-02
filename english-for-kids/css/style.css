@@ -84,7 +84,7 @@ a {
   color: #d82b7a;
 }
 
-.menu-button {
+.menu-button { /* TODO fix style */
   position: relative;
   top: 22px;
   width: 40px;

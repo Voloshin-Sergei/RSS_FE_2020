@@ -22,7 +22,7 @@ const startGame = () => {
   menu.classList.toggle('game');
 };
 
-// Open or close navbar menu
+// Open or close navbar menu // TODO add no scrolling
 const showMenu = () => {
   menuButton.classList.toggle('is-active');
   navigation.classList.toggle('nav-visible');
@@ -30,8 +30,8 @@ const showMenu = () => {
 
 // Create card in main page
 const createCard = (card) => {
-  const { name, image } = card;
-  const mainCard = `<div class="cards__item">
+  const { name, image, words } = card;
+  const mainCard = `<div class="cards__item" data-words="${words}">
                   <img class="card-image" src="${image}"></img>
                   <span></span>
                   <h2 class="card-title">${name}</h2>
@@ -41,13 +41,14 @@ const createCard = (card) => {
 };
 
 // Create word card
-const createCardWord = () => {
+const createCardWord = (words) => {
+  const { name, image } = words;
   const wordCard = document.createElement('div');
   wordCard.className = 'words__item';
   wordCard.insertAdjacentHTML('beforeend', `
-                    <img class="card-image" src="assets/img/card_img/animals/animals.svg"></img>
+                    <img class="card-image" src="${image}"></img>
                     <span></span>
-                    <h2 class="card-title">Animals</h2>
+                    <h2 class="card-title">${name}</h2>
                     <div><img class="reverse-image" src="assets/img/icon/reverse.svg"></img></div>
   `);
   cardsWithWords.insertAdjacentElement('beforeend', wordCard);
@@ -61,6 +62,9 @@ const openCards = (event) => {
     cardsWithWords.textContent = '';
     cardsContainer.classList.add('hide');
     wordsContainer.classList.remove('hide');
+    getData(`./db/${wordCard.dataset.words}`).then((data) => {
+      data.forEach(createCardWord);
+    });
   }
 };
 
