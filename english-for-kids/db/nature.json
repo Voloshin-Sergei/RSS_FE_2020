@@ -2,51 +2,51 @@
   {
     "name": "Field",
     "image": "assets/img/card_img/nature/field.svg",
-    "sound": "assets/img/card_sounds/nature/field.mp3",
+    "sound": "assets/sounds/card_sounds/nature/field.mp3",
     "translation": "Поле"
   },
   {
     "name": "Flower",
     "image": "assets/img/card_img/nature/flower.svg",
-    "sound": "assets/img/card_sounds/nature/flower.mp3",
+    "sound": "assets/sounds/card_sounds/nature/flower.mp3",
     "translation": "Цветок"
   },
   {
     "name": "Forest",
     "image": "assets/img/card_img/nature/forest.svg",
-    "sound": "assets/img/card_sounds/nature/forest.mp3",
+    "sound": "assets/sounds/card_sounds/nature/forest.mp3",
     "translation": "Лес"
   },
   {
     "name": "Island",
     "image": "assets/img/card_img/nature/island.svg",
-    "sound": "assets/img/card_sounds/nature/island.mp3",
+    "sound": "assets/sounds/card_sounds/nature/island.mp3",
     "translation": "Остров"
   },
   {
     "name": "Mountain",
     "image": "assets/img/card_img/nature/mountain.svg",
-    "sound": "assets/img/card_sounds/nature/mountain.mp3",
+    "sound": "assets/sounds/card_sounds/nature/mountain.mp3",
     "translation": "Гора"
   },
   {
     "name": "River",
     "image": "assets/img/card_img/nature/river.svg",
-    "sound": "assets/img/card_sounds/nature/river.mp3",
+    "sound": "assets/sounds/card_sounds/nature/river.mp3",
     "translation": "Река"
   }
   ,
   {
     "name": "Sea",
     "image": "assets/img/card_img/nature/sea.svg",
-    "sound": "assets/img/card_sounds/nature/sea.mp3",
+    "sound": "assets/sounds/card_sounds/nature/sea.mp3",
     "translation": "Море"
   }
   ,
   {
     "name": "Tree",
     "image": "assets/img/card_img/nature/tree.svg",
-    "sound": "assets/img/card_sounds/nature/tree.mp3",
+    "sound": "assets/sounds/card_sounds/nature/tree.mp3",
     "translation": "Дерево"
   }
 ]

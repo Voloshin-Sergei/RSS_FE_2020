@@ -2,51 +2,51 @@
   {
     "name": "Cooker",
     "image": "assets/img/card_img/kitchen/cooker.svg",
-    "sound": "assets/img/card_sounds/kitchen/cooker.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/cooker.mp3",
     "translation": "Плита"
   },
   {
     "name": "Cup",
     "image": "assets/img/card_img/kitchen/cup.svg",
-    "sound": "assets/img/card_sounds/kitchen/cup.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/cup.mp3",
     "translation": "Чашка"
   },
   {
     "name": "Fork",
     "image": "assets/img/card_img/kitchen/fork.svg",
-    "sound": "assets/img/card_sounds/kitchen/fork.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/fork.mp3",
     "translation": "Вилка"
   },
   {
     "name": "Fridge",
     "image": "assets/img/card_img/kitchen/fridge.svg",
-    "sound": "assets/img/card_sounds/kitchen/fridge.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/fridge.mp3",
     "translation": "Холодильник"
   },
   {
     "name": "Kettle",
     "image": "assets/img/card_img/kitchen/kettle.svg",
-    "sound": "assets/img/card_sounds/kitchen/kettle.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/kettle.mp3",
     "translation": "Вишня"
   },
   {
     "name": "Knife",
     "image": "assets/img/card_img/kitchen/knife.svg",
-    "sound": "assets/img/card_sounds/kitchen/knife.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/knife.mp3",
     "translation": "Чайник"
   }
   ,
   {
     "name": "Plate",
     "image": "assets/img/card_img/kitchen/plate.svg",
-    "sound": "assets/img/card_sounds/kitchen/plate.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/plate.mp3",
     "translation": "Тарелка"
   }
   ,
   {
     "name": "Spoon",
     "image": "assets/img/card_img/kitchen/spoon.svg",
-    "sound": "assets/img/card_sounds/kitchen/spoon.mp3",
+    "sound": "assets/sounds/card_sounds/kitchen/spoon.mp3",
     "translation": "Горшок"
   }
 ]

@@ -2,51 +2,51 @@
   {
     "name": "Aunt",
     "image": "assets/img/card_img/family/aunt.svg",
-    "sound": "assets/img/card_sounds/family/aunt.mp3",
+    "sound": "assets/sounds/card_sounds/family/aunt.mp3",
     "translation": "Тетя"
   },
   {
     "name": "Brother",
     "image": "assets/img/card_img/family/brother.svg",
-    "sound": "assets/img/card_sounds/family/brother.mp3",
+    "sound": "assets/sounds/card_sounds/family/brother.mp3",
     "translation": "Брат"
   },
   {
     "name": "Family",
     "image": "assets/img/card_img/family/famil.svg",
-    "sound": "assets/img/card_sounds/family/family.mp3",
+    "sound": "assets/sounds/card_sounds/family/family.mp3",
     "translation": "Семья"
   },
   {
     "name": "Father",
     "image": "assets/img/card_img/family/father.svg",
-    "sound": "assets/img/card_sounds/family/father.mp3",
+    "sound": "assets/sounds/card_sounds/family/father.mp3",
     "translation": "Отец"
   },
   {
     "name": "Grandma",
     "image": "assets/img/card_img/family/grandma.svg",
-    "sound": "assets/img/card_sounds/family/grandma.mp3",
+    "sound": "assets/sounds/card_sounds/family/grandma.mp3",
     "translation": "Бабушка"
   },
   {
     "name": "Grandpa",
     "image": "assets/img/card_img/family/grandpa.svg",
-    "sound": "assets/img/card_sounds/family/grandpa.mp3",
+    "sound": "assets/sounds/card_sounds/family/grandpa.mp3",
     "translation": "Дедушка"
   }
   ,
   {
     "name": "Mother",
     "image": "assets/img/card_img/family/mother.svg",
-    "sound": "assets/img/card_sounds/family/mother.mp3",
+    "sound": "assets/sounds/card_sounds/family/mother.mp3",
     "translation": "Мать"
   }
   ,
   {
     "name": "Sister",
     "image": "assets/img/card_img/family/sister.svg",
-    "sound": "assets/img/card_sounds/family/sister.mp3",
+    "sound": "assets/sounds/card_sounds/family/sister.mp3",
     "translation": "Сестра"
   }
 ]

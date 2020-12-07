@@ -50,22 +50,30 @@ const createCard = (card) => {
 };
 
 // Play sound card
-const playSound = () => {
+const playSound = (url) => {
   const sound = new Audio();
-  sound.src = "";
+  sound.src = url;
   sound.play();
 };
 
 // Create word card
 const createCardWord = (words) => {
-  const { name, image } = words;
-  const wordCard = `
-                  <div class="words__item">
-                    <img class="card-image" src="${image}"></img>
-                    <span></span>
-                    <h2 class="card-title">${name}</h2>
-                    <div><img class="reverse-image" src="assets/img/icon/reverse.svg"></img></div>
-                    </div>`;
+  const {
+    name, image, translation, sound,
+  } = words;
+  const wordCard = `  <div class="words__item">
+                        <img class="card-image front" src="${image}"></img>
+                        <img class="card-image-back back hide" src="${image}"></img
+                        <span></span>
+                        <h2 class="card-title front">${name}</h2>
+                        <h2 class="card-translation back hide">${translation}</h2>
+                        <div>
+                          <img class="reverse-image" src="assets/img/icon/reverse.svg"></img>
+                        </div>
+                        <audio preload = "auto" class = "card__audio">
+                          <source type ="audio/mp3" src="${sound}" />
+                        </audio>
+                      </div>`;
   cardsWithWords.insertAdjacentHTML('beforeend', wordCard);
 };
 
@@ -100,6 +108,47 @@ const menuOpenCards = (event) => {
   }
 };
 
+// Reverse word card
+const reversWordCard = (wordCard) => {
+  const cardTranslation = wordCard.querySelector('.card-translation');
+  const cardTitle = wordCard.querySelector('.card-title');
+  const reverseImage = wordCard.querySelector('.reverse-image');
+  const cardImage = wordCard.querySelector('.card-image');
+  const cardImageBack = wordCard.querySelector('.card-image-back');
+
+  cardTranslation.classList.add('revers');
+  cardTranslation.classList.remove('back');
+  cardTranslation.classList.remove('hide');
+
+  cardImageBack.classList.add('revers');
+  cardImageBack.classList.remove('back');
+  cardImageBack.classList.remove('hide');
+
+  cardTitle.classList.remove('revers');
+  cardTitle.classList.add('back');
+  cardTitle.classList.add('hide');
+
+  cardImage.classList.remove('revers');
+  cardImage.classList.add('back');
+  cardImage.classList.add('hide');
+
+  wordCard.classList.add('revers');
+  reverseImage.classList.add('hide');
+};
+
+// even for word card
+const wordCardEvent = (event) => {
+  const { target } = event;
+  const wordCard = target.closest('.words__item');
+  const wordSound = wordCard.querySelector('.card__audio source').src;
+  const revers = target.closest('.reverse-image');
+  if (!revers) {
+    playSound(wordSound);
+  } else if (revers) {
+    reversWordCard(wordCard);
+  }
+};
+
 // Return to mane Page
 const returnManePage = () => {
   cardsContainer.classList.remove('hide');
@@ -107,7 +156,6 @@ const returnManePage = () => {
 };
 
 getData('./db/main-cards.json').then((data) => {
-  console.log(data);
   data.forEach(createCard);
   data.forEach(createMenu);
 });
@@ -117,12 +165,4 @@ menuButton.addEventListener('click', showMenu);
 cardsOnMainPage.addEventListener('click', openCards);
 headerTitle.addEventListener('click', returnManePage);
 menu.addEventListener('click', menuOpenCards);
-
-// TEST
-const test = (event) => {
-  const { target } = event;
-  const wordCard = target.closest('.words__item');
-  console.log(wordCard);
-};
-
-cardsWithWords.addEventListener('click', test);
+cardsWithWords.addEventListener('click', wordCardEvent);
