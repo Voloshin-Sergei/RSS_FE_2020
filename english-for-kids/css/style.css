@@ -283,6 +283,7 @@ backface-visibility: hidden;
 .reverse-image {
   width: 30px;
   height: 30px;
+  transition: .5s;
 }
 
 .hide {
@@ -290,12 +291,25 @@ backface-visibility: hidden;
 }
 
 .footer__container {
+  display: flex;
   text-align: center;
+  justify-content: center;
   padding: 20px;
 }
 
-.footer-title {
+.footer__container p {
   color: #ffffff;
+  font-size: 18px;
+}
+
+.author {
+  margin-right: 20px;
+}
+
+.footer__icon {
+  width: 60px;
+  height: 100%;
+  margin-right: 20px;
 }
 
 @media (max-width: 710px) {

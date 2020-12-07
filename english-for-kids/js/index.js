@@ -135,7 +135,7 @@ const reversWordCard = (wordCard) => {
   wordCard.classList.add('revers');
   reverseImage.classList.add('hide');
 
-  cardsWithWords.onmouseleave = () => {
+  wordCard.onmouseleave = () => {
     cardTranslation.classList.remove('revers');
     cardTranslation.classList.add('back');
     cardTranslation.classList.add('hide');
