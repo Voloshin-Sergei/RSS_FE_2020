@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: FredokaOne;
-  src: url("../assets/fonts/FredokaOne-Regular.ttf");
+  font-family: BalsamiqSans;
+  src: url("../assets/fonts/BalsamiqSans-Regular.ttf");
   font-weight: normal;
 }
 
@@ -16,7 +16,7 @@
 
 body {
   background-color: #3cc7f4;
-  font-family: 'FredokaOne', sans-serif;
+  font-family: 'BalsamiqSans', sans-serif;
   letter-spacing: 2px;
   transition: background-color 0.2s linear;
 }
@@ -27,6 +27,21 @@ body.game {
 
 a {
   text-decoration: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.overlay-active {
+  display: block;
+  background-color: rgba(0,0,0,.12);
 }
 
 .overflow-hidden {
@@ -53,12 +68,13 @@ a {
   top: 0;
   left: -100vw;
   box-shadow: 10px 0 5px 2px rgba(0,0,0,.12);
-  transition: left 0.4s;
+  transition: all 1.9s ease;
+  z-index: 3;
 }
 
 .nav-visible {
   left: 0;
-  transition: left 0.4s;
+  transition: all 0.5s ease;
 }
 
 .menu {
@@ -93,6 +109,7 @@ a {
   width: 40px;
   height: 30px;
   cursor: pointer;
+  z-index: 3;
 }
 
 .menu-button span {
@@ -185,14 +202,37 @@ a {
   transform: translateX(24px);
 }
 
-.cards, .words {
+.play {
+  background-color: #3cc7f4;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  border-radius: 4px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.hiden {
+  opacity: 0;
+}
+
+.cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.cards__item, .words__item {
+.words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cards__item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,6 +248,37 @@ a {
   transition: 0.5s;
 }
 
+.words__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 210px;
+  min-height: 311px;
+  margin: 20px 20px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,.16), 0 10px 10px 0 rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: 0.6s;
+	transform-style: preserve-3d; 
+}
+
+.front {
+	z-index: 2;
+	backface-visibility: hidden;
+}
+
+.back {	
+transform: rotateY(180deg);
+backface-visibility: hidden;
+}
+
+.revers {
+  transform: rotateY(180deg);
+  }
+
 .cards__item:hover, .words__item:hover {
   box-shadow: 0 20px 20px 0 rgba(0,0,0,.16), 0 10px 10px 0 rgba(0,0,0,.12);
 }
@@ -216,7 +287,7 @@ a {
   color: #d82b7a;
 }
 
-.card-image {
+.card-image, .card-image-back {
   width: 120px;
   object-fit: cover;
   margin-bottom: 20px;
@@ -236,9 +307,16 @@ a {
   transition: .5s;
 }
 
+.card-translation {
+  font-size: 30px;
+  color: #3156a6;
+  transition: .5s;
+}
+
 .reverse-image {
   width: 30px;
   height: 30px;
+  transition: .5s;
 }
 
 .hide {
@@ -246,12 +324,25 @@ a {
 }
 
 .footer__container {
+  display: flex;
   text-align: center;
+  justify-content: center;
   padding: 20px;
 }
 
-.footer-title {
+.footer__container p {
   color: #ffffff;
+  font-size: 18px;
+}
+
+.author {
+  margin-right: 20px;
+}
+
+.footer__icon {
+  width: 60px;
+  height: 100%;
+  margin-right: 20px;
 }
 
 @media (max-width: 710px) {
@@ -283,4 +374,8 @@ a {
   .header-title {
     font-size: 43px;
   }
+}
+
+.words__item.active {
+  background-color: red;
 }

@@ -2,51 +2,51 @@
   {
     "name": "Apple",
     "image": "assets/img/card_img/food/apple.svg",
-    "sound": "assets/img/card_sounds/food/apple.mp3",
+    "sound": "assets/sounds/card_sounds/food/apple.mp3",
     "translation": "Яблоко"
   },
   {
     "name": "Banana",
     "image": "assets/img/card_img/food/banana.svg",
-    "sound": "assets/img/card_sounds/food/banana.mp3",
+    "sound": "assets/sounds/card_sounds/food/banana.mp3",
     "translation": "Банан"
   },
   {
     "name": "Bread",
     "image": "assets/img/card_img/food/bread.svg",
-    "sound": "assets/img/card_sounds/food/bread.mp3",
+    "sound": "assets/sounds/card_sounds/food/bread.mp3",
     "translation": "Хлеб"
   },
   {
     "name": "Cheese",
     "image": "assets/img/card_img/food/cheese.svg",
-    "sound": "assets/img/card_sounds/food/cheese.mp3",
+    "sound": "assets/sounds/card_sounds/food/cheese.mp3",
     "translation": "Сыр"
   },
   {
     "name": "Cherry",
     "image": "assets/img/card_img/food/cherry.svg",
-    "sound": "assets/img/card_sounds/food/cherry.mp3",
+    "sound": "assets/sounds/card_sounds/food/cherry.mp3",
     "translation": "Вишня"
   },
   {
     "name": "Egg",
     "image": "assets/img/card_img/food/egg.svg",
-    "sound": "assets/img/card_sounds/food/egg.mp3",
+    "sound": "assets/sounds/card_sounds/food/egg.mp3",
     "translation": "Яйцо"
   }
   ,
   {
     "name": "Mushroom",
     "image": "assets/img/card_img/food/mushroom.svg",
-    "sound": "assets/img/card_sounds/food/mushroom.mp3",
+    "sound": "assets/sounds/card_sounds/food/mushroom.mp3",
     "translation": "Гриб"
   }
   ,
   {
     "name": "Salad",
     "image": "assets/img/card_img/food/salad.svg",
-    "sound": "assets/img/card_sounds/food/salad.mp3",
+    "sound": "assets/sounds/card_sounds/food/salad.mp3",
     "translation": "Салат"
   }
 ]

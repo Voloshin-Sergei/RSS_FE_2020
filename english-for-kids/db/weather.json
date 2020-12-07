@@ -2,51 +2,51 @@
   {
     "name": "Cloud",
     "image": "assets/img/card_img/weather/cloud.svg",
-    "sound": "assets/img/card_sounds/weather/cloud.mp3",
+    "sound": "assets/sounds/card_sounds/weather/cloud.mp3",
     "translation": "Облако"
   },
   {
     "name": "Frost",
     "image": "assets/img/card_img/weather/frost.svg",
-    "sound": "assets/img/card_sounds/weather/frost.mp3",
+    "sound": "assets/sounds/card_sounds/weather/frost.mp3",
     "translation": "Холод"
   },
   {
     "name": "Rain",
     "image": "assets/img/card_img/weather/rain.svg",
-    "sound": "assets/img/card_sounds/weather/rain.mp3",
+    "sound": "assets/sounds/card_sounds/weather/rain.mp3",
     "translation": "Дождь"
   },
   {
     "name": "Rainbow",
     "image": "assets/img/card_img/weather/rainbow.svg",
-    "sound": "assets/img/card_sounds/weather/rainbow.mp3",
+    "sound": "assets/sounds/card_sounds/weather/rainbow.mp3",
     "translation": "Радуга"
   },
   {
     "name": "Snow",
     "image": "assets/img/card_img/weather/snow.svg",
-    "sound": "assets/img/card_sounds/weather/snow.mp3",
+    "sound": "assets/sounds/card_sounds/weather/snow.mp3",
     "translation": "Снег"
   },
   {
     "name": "Sun",
     "image": "assets/img/card_img/weather/sun.svg",
-    "sound": "assets/img/card_sounds/weather/sun.mp3",
+    "sound": "assets/sounds/card_sounds/weather/sun.mp3",
     "translation": "Солнце"
   }
   ,
   {
     "name": "Warm",
     "image": "assets/img/card_img/weather/warm.svg",
-    "sound": "assets/img/card_sounds/weather/warm.mp3",
+    "sound": "assets/sounds/card_sounds/weather/warm.mp3",
     "translation": "Жара"
   }
   ,
   {
     "name": "Wind",
     "image": "assets/img/card_img/weather/wind.svg",
-    "sound": "assets/img/card_sounds/weather/wind.mp3",
+    "sound": "assets/sounds/card_sounds/weather/wind.mp3",
     "translation": "Ветер"
   }
 ]
