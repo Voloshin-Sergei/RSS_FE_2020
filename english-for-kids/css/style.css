@@ -29,6 +29,21 @@ a {
   text-decoration: none;
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.overlay-active {
+  display: block;
+  background-color: rgba(0,0,0,.12);
+}
+
 .overflow-hidden {
   overflow: hidden; }
 
@@ -53,12 +68,13 @@ a {
   top: 0;
   left: -100vw;
   box-shadow: 10px 0 5px 2px rgba(0,0,0,.12);
-  transition: left 0.4s;
+  transition: all 1.9s ease;
+  z-index: 3;
 }
 
 .nav-visible {
   left: 0;
-  transition: left 0.4s;
+  transition: all 0.5s ease;
 }
 
 .menu {
@@ -93,6 +109,7 @@ a {
   width: 40px;
   height: 30px;
   cursor: pointer;
+  z-index: 3;
 }
 
 .menu-button span {

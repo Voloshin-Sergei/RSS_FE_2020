@@ -9,6 +9,7 @@ const cardsContainer = document.querySelector('.cards__container');
 const wordsContainer = document.querySelector('.words__container');
 const headerTitle = document.querySelector('.header-title');
 const body = document.querySelector('body');
+const overlay = document.querySelector('.overlay');
 
 // Access to database
 const getData = async function (url) {
@@ -35,6 +36,11 @@ const showMenu = () => {
   menuButton.classList.toggle('is-active');
   navigation.classList.toggle('nav-visible');
   body.classList.toggle('overflow-hidden');
+  overlay.classList.toggle('overlay-active');
+};
+
+overlay.onclick = () => {
+  showMenu();
 };
 
 // Create card in main page
@@ -58,6 +64,7 @@ const playSound = (url) => {
 
 // Create word card
 const createCardWord = (words) => {
+  overlay.classList.remove('overlay-active');
   const {
     name, image, translation, sound,
   } = words;
