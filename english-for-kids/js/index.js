@@ -134,6 +134,25 @@ const reversWordCard = (wordCard) => {
 
   wordCard.classList.add('revers');
   reverseImage.classList.add('hide');
+
+  cardsWithWords.onmouseleave = () => {
+    cardTranslation.classList.remove('revers');
+    cardTranslation.classList.add('back');
+    cardTranslation.classList.add('hide');
+
+    cardImageBack.classList.remove('revers');
+    cardImageBack.classList.add('back');
+    cardImageBack.classList.add('hide');
+
+    cardTitle.classList.remove('back');
+    cardTitle.classList.remove('hide');
+
+    cardImage.classList.remove('back');
+    cardImage.classList.remove('hide');
+
+    wordCard.classList.remove('revers');
+    reverseImage.classList.remove('hide');
+  };
 };
 
 // even for word card
