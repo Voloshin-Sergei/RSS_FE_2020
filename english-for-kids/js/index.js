@@ -10,6 +10,7 @@ const wordsContainer = document.querySelector('.words__container');
 const headerTitle = document.querySelector('.header-title');
 const body = document.querySelector('body');
 const overlay = document.querySelector('.overlay');
+const playBtn = document.querySelector('.play');
 
 // Access to database
 const getData = async function (url) {
@@ -22,6 +23,7 @@ const startGame = () => {
   document.body.classList.toggle('game');
   label.classList.toggle('game');
   menu.classList.toggle('game');
+  playBtn.classList.toggle('hiden');
 };
 
 // Create navbar menu
