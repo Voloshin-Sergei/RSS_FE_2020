@@ -11,6 +11,7 @@ const headerTitle = document.querySelector('.header-title');
 const body = document.querySelector('body');
 const overlay = document.querySelector('.overlay');
 const playBtn = document.querySelector('.play');
+const wrapper = document.querySelector('.wrapper');
 
 // Access to database
 const getData = async function (url) {
@@ -20,7 +21,7 @@ const getData = async function (url) {
 
 // Open or close game mode
 const startGame = () => {
-  document.body.classList.toggle('game');
+  wrapper.classList.toggle('game');
   label.classList.toggle('game');
   menu.classList.toggle('game');
   playBtn.classList.toggle('hiden');
@@ -41,19 +42,15 @@ const showMenu = () => {
   overlay.classList.toggle('overlay-active');
 };
 
-overlay.onclick = () => {
-  showMenu();
-};
-
 // Create card in main page
 const createCard = (card) => {
   const { name, image, words } = card;
-  const mainCard = `<div class="cards__item" data-words="${words}">
-                  <img class="card-image" src="${image}"></img>
-                  <span></span>
-                  <h2 class="card-title">${name}</h2>
-                </div>
-              `;
+  const mainCard = `
+    <div class="cards__item" data-words="${words}">
+      <img class="card-image" src="${image}"></img>
+        <span></span>
+        <h2 class="card-title">${name}</h2>
+    </div>`;
   cardsOnMainPage.insertAdjacentHTML('beforeend', mainCard);
 };
 
@@ -70,19 +67,20 @@ const createCardWord = (words) => {
   const {
     name, image, translation, sound,
   } = words;
-  const wordCard = `  <div class="words__item">
-                        <img class="card-image front" src="${image}"></img>
-                        <img class="card-image-back back hide" src="${image}"></img
-                        <span></span>
-                        <h2 class="card-title front">${name}</h2>
-                        <h2 class="card-translation back hide">${translation}</h2>
-                        <div>
-                          <img class="reverse-image" src="assets/img/icon/reverse.svg"></img>
-                        </div>
-                        <audio preload = "auto" class = "card__audio">
-                          <source type ="audio/mp3" src="${sound}" />
-                        </audio>
-                      </div>`;
+  const wordCard = `
+    <div class="words__item">
+      <img class="card-image front" src="${image}"></img>
+      <img class="card-image-back back hide" src="${image}"></img
+      <span></span>
+      <h2 class="card-title front">${name}</h2>
+      <h2 class="card-translation back hide">${translation}</h2>
+      <div>
+        <img class="reverse-image" src="assets/img/icon/reverse.svg"></img>
+      </div>
+      <audio preload = "auto" class = "card__audio">
+        <source type ="audio/mp3" src="${sound}" />
+      </audio>
+    </div>`;
   cardsWithWords.insertAdjacentHTML('beforeend', wordCard);
 };
 
@@ -194,3 +192,4 @@ cardsOnMainPage.addEventListener('click', openCards);
 headerTitle.addEventListener('click', returnManePage);
 menu.addEventListener('click', menuOpenCards);
 cardsWithWords.addEventListener('click', wordCardEvent);
+overlay.addEventListener('click', showMenu);

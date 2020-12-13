@@ -14,19 +14,19 @@
   box-sizing: border-box;
 }
 
-body {
+a {
+  text-decoration: none;
+}
+
+.wrapper {
   background-color: #3cc7f4;
   font-family: 'BalsamiqSans', sans-serif;
   letter-spacing: 2px;
   transition: background-color 0.2s linear;
 }
 
-body.game {
+.game {
   background-color: #fd9827;
-}
-
-a {
-  text-decoration: none;
 }
 
 .overlay {
