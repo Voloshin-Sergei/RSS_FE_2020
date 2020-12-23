@@ -1,0 +1,32 @@
+.global-amount {
+  text-align: center;
+  padding: 10px;
+}
+
+.global-title {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.global-cases {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0;
+
+  color: red;
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .global-cases {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 450px) {
+  .global-cases {
+    font-size: 18px;
+  }
+}
