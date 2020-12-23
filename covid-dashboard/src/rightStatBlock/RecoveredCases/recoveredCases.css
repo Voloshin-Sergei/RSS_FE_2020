@@ -1,0 +1,47 @@
+.country-recoveredCases {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .country-recoveredCases-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    
+  }
+  
+  .country-recoveredCases-list {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+  }
+  
+  .country-recoveredCases-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #333333;
+    min-height: 30px;
+    padding: 8px;
+  }
+  .global-recoveredAmount {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  @media (max-width: 1200px) and (min-width: 768px) {
+    .country-recoveredCases {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 767px) and (min-width: 450px) {
+    .country-recoveredCases {
+      font-size: 18px;
+    }
+  }
+  

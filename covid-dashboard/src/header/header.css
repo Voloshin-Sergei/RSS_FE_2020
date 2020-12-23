@@ -1,0 +1,114 @@
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0 0 0 15px;
+}
+.header-title {
+  display: flex;
+  width: 100%;
+}
+.header-title svg {
+  min-width: 32px;
+  margin: 5px;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.burger {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.burger-line {
+  display: block;
+
+  width: 20px;
+  height: 3px;
+  background-color: #333333;
+  border-radius: 20px;
+
+  transition: all 1s;
+}
+
+.burger-line::after {
+  content: "";
+  display: block;
+
+  width: 20px;
+  height: 3px;
+  background-color: #333333;
+  border-radius: 20px;
+  position: relative;
+  top: 5px;
+
+  transition: all 1s;
+}
+
+.burger-line::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #333333;
+  border-radius: 20px;
+  position: relative;
+  bottom: 8px;
+
+  transition: all 1s;
+}
+
+.burger:hover .burger-line,
+.burger:hover .burger-line::after,
+.burger:hover .burger-line::before {
+  cursor: pointer;
+  background-color: rgb(189, 189, 189);
+  transition: all 1s;
+}
+.hidden {
+  display: none;
+}
+
+.menu__list {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  right: 0;
+  top: 0;
+  background-color: #1f1f1d;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  transition: all 1s;
+
+  min-width: 150px;
+}
+
+.menu__item {
+  list-style: none;
+  padding: 10px;
+}
+
+.menu__item:hover {
+  background-color: #707070;
+  transition: all 1s;
+}
+
+.menu__item a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 18px;
+  }
+}

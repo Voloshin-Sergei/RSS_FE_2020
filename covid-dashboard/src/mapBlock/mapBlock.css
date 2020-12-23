@@ -1,0 +1,7 @@
+.leaflet-container {
+    height: 100%;
+  }
+
+.leaflet-interactive {
+  fill-opacity: 1;
+}
